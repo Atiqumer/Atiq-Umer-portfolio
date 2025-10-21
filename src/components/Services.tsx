@@ -91,7 +91,7 @@ const Skills = () => {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-[34px] sm:text-[45px] md:text-[55px] font-extrabold uppercase tracking-wide text-black mb-16"
+          className="text-[28px] sm:text-[33px] md:text-[45px] font-bold uppercase text-black mb-16"
         >
           My{" "}
           <span className="text-[#1e40af] text-transparent">

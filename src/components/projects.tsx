@@ -72,10 +72,10 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="bg-[#070615f8] p-8 scroll-mt-24">
-      <p className="text-center text-white text-[28px] sm:text-[33px] md:text-[45px] font-bold uppercase">
+    <section id="projects" className="bg-[#b6b6c9f8] p-8 scroll-mt-24">
+      <p className="text-center text-black text-[28px] sm:text-[33px] md:text-[45px] font-bold uppercase">
         My{" "}
-        <span className="bg-gradient-to-r from-[#8B5CF6] via-[#EC4899] to-[#9606d4ee] bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r text-[#1e40af] bg-clip-text text-transparent">
           Projects
         </span>
       </p>
@@ -174,7 +174,7 @@ const Projects = () => {
           href="https://github.com/Atiqumer?tab=repositories"
           target="_blank"
           rel="noopener noreferrer"
-          className="px-6 py-3 font-semibold text-lg rounded-lg bg-gradient-to-r from-rose-500 to-fuchsia-500 hover:opacity-90 hover:scale-105 transition-all duration-300 text-white"
+          className="bg-gradient-to-r from-blue-800 to-cyan-800 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl"
         >
           See More Projects
         </Link>

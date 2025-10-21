@@ -49,13 +49,13 @@ setVisibleSteps((prev) => Array.from(new Set([...prev, stepId])));
  return (
   <section
    id="education"
-   className="py-16 px-4 sm:px-6 lg:px-8 bg-[#070615f8] overflow-hidden "
+   className="py-16 px-4 sm:px-6 lg:px-8 bg-[#b6b6c9f8] overflow-hidden "
   >
    {/* Background Glows */}
    <div className="absolute inset-0 pointer-events-none">
-    <div className="absolute top-20 left-20 w-[600px] h-[600px] bg-gradient-radial from-[#8B5CF6]/30 via-[#EC4899]/15 to-transparent rounded-full blur-[100px] animate-pulse-slow"></div>
+    <div className="absolute top-20 left-20 w-[600px] h-[600px] bg-gradient-radial from-[#1e40af] via-[#155e75] to-transparent rounded-full blur-[100px] animate-pulse-slow"></div>
     <div
-     className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-gradient-radial from-[#06B6D4]/25 via-[#8B5CF6]/15 to-transparent rounded-full blur-[80px] animate-pulse-slow"
+     className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-gradient-radial from-[#1e40af] via-[#155e75] to-transparent rounded-full blur-[80px] animate-pulse-slow"
      style={{ animationDelay: "1s" }}
     ></div>
     <div
@@ -66,9 +66,9 @@ setVisibleSteps((prev) => Array.from(new Set([...prev, stepId])));
 
    {/* Header */}
    <div className="max-w-5xl mx-auto relative z-10 text-center mb-12">
-    <h2 className="text-center text-white text-[28px] sm:text-[33px] md:text-[45px] font-bold uppercase">
+    <h2 className="text-center text-black text-[28px] sm:text-[33px] md:text-[45px] font-bold uppercase">
      MY{" "}
-     <span className="bg-gradient-to-r from-[#8B5CF6] via-[#EC4899] to-[#9606d4ee] bg-clip-text text-transparent">
+     <span className="bg-gradient-to-r text-[#1e40af] bg-clip-text text-transparent">
 EDUCATION
      </span>
     </h2>
