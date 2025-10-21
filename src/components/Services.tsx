@@ -127,7 +127,7 @@ const Skills = () => {
 
 
               {/* Card Foreground - Cleaned up to remove redundant motion background */}
-              <div className="relative z-10 flex flex-col items-center justify-center w-full h-full p-4 sm:p-6 bg-[black]/50 backdrop-blur-2xl border border-[#8B5CF6]/20 hover:border-[#1e40af]/50 rounded-xl transition-all duration-500">
+              <div className="relative z-10 flex flex-col items-center justify-center w-full h-full p-4 sm:p-6 bg-[#99a0c5] backdrop-blur-2xl border border-[white] hover:border-[white] rounded-xl transition-all duration-500">
                 <motion.div
                   animate={{ y: [0, -4, 0] }}
                   transition={{
@@ -139,7 +139,7 @@ const Skills = () => {
                 >
                   {skill.icon}
                 </motion.div>
-                <h3 className="text-xs sm:text-sm font-semibold tracking-wide text-center group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-[#155e75] group-hover:to-[#1e40af] group-hover:bg-clip-text transition-all duration-300">
+                <h3 className="text-xs sm:text-sm font-semibold tracking-wide text-center hover:border-[white] transition-all duration-300">
                   {skill.name}
                 </h3>
               </div>
