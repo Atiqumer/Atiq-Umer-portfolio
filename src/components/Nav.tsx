@@ -32,7 +32,7 @@ bg-[hashtag#0b0816]/50 backdrop-blur-xl border border-stone-900/50
 rounded-2xl shadow-[0_0_25px_hashtag#d946ef30] px-4 sm:px-6 md:px-8 py-3"
 >
 {/* Logo */}
-<h1 className="text-[22px] sm:text-[30px] font-bold text-cyan-800 tracking-wide hover:text-cyan-700 transition cursor-pointer">
+<h1 className="text-[22px] sm:text-[30px] font-bold text-[#1e40af] tracking-wide hover:text-[#1e40af] transition cursor-pointer">
 Atiq Umer
 </h1>
 
@@ -42,10 +42,10 @@ Atiq Umer
 <li key={link.name}>
 <button
 onClick={() => handleScroll(link.href)}
-className="text-black font-medium text-lg relative group"
+className="text-white font-medium text-lg relative group"
 >
 {link.name}
-<span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gradient-to-r from-blue-900 to-purple-500 transition-all duration-300 group-hover:w-full" />
+<span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gradient-to-r from-blue-900 to-[white]/20 transition-all duration-300 group-hover:w-full" />
 </button>
 </li>
 ))}
