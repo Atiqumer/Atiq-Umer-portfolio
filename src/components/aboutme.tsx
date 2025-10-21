@@ -51,20 +51,20 @@ export default function About() {
   return (
     <section
       id="about"
-      className="scroll-mt-[12vh] py-16 px-4 sm:px-6 lg:px-8 bg-[#070615f8] overflow-hidden "
+      className="scroll-mt-[12vh] py-16 px-4 sm:px-6 lg:px-8 bg-[#b6b6c9f8] overflow-hidden "
     >
       {/* Background Glows */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-radial from-[#8B5CF6]/30 via-[#EC4899]/20 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-radial from-[#06B6D4]/30 via-[#8B5CF6]/20 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute top-1/2 left-1/2 w-72 h-72 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-radial from-[#EC4899]/20 via-[#06B6D4]/10 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-radial from-[#1e40af]/30 via-[#b6b6c9f8]/20 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-radial from-[#06B6D4]/30 via-[#1e40af]/20 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute top-1/2 left-1/2 w-72 h-72 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-radial from-[#b6b6c9f8]/20 via-[#06B6D4]/10 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
       </div>
 
       {/* Section Header */}
       <div className="max-w-5xl mx-auto relative z-10 text-center mb-10">
         <h2 className="text-white text-[28px] sm:text-[33px] md:text-[45px] font-bold uppercase">
           WHY{" "}
-          <span className="bg-gradient-to-r from-[blue] to-[#9090f7] bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r text-[#1e40af] bg-clip-text text-transparent">
             ME
           </span>
         </h2>
@@ -92,16 +92,16 @@ export default function About() {
               } transition-all duration-700 ease-out`}
               style={{ transitionDelay: `${index * 200}ms` }}
             >
-              <div className="bg-black/30 backdrop-blur-md border border-[#8B5CF6]/30 rounded-xl p-6 min-h-[230px] flex flex-col justify-between hover:bg-black/50 hover:border-[#EC4899]/50 hover:-translate-y-2 hover:shadow-xl hover:shadow-[#EC4899]/30 transition-all duration-300 group">
+              <div className="bg-black/30 backdrop-blur-md border border-[#1e40af]/30 rounded-xl p-6 min-h-[230px] flex flex-col justify-between hover:bg-black/50 hover:border-[#b6b6c9f8]/50 hover:-translate-y-2 hover:shadow-xl hover:shadow-[#b6b6c9f8]/30 transition-all duration-300 group">
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0 relative">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#8B5CF6] via-[#EC4899] to-[#06B6D4] p-2 flex items-center justify-center shadow-lg shadow-[#8B5CF6]/50 group-hover:shadow-[#EC4899]/70 transition-all duration-300">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#1e40af] via-[#b6b6c9f8] to-[#06B6D4] p-2 flex items-center justify-center shadow-lg shadow-[#1e40af]/50 group-hover:shadow-[#b6b6c9f8]/70 transition-all duration-300">
                       <Icon className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300" />
                     </div>
-                    <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-[#8B5CF6] via-[#EC4899] to-transparent opacity-0 group-hover:opacity-40 group-hover:animate-ping transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-[#1e40af] via-[#b6b6c9f8] to-transparent opacity-0 group-hover:opacity-40 group-hover:animate-ping transition-opacity duration-300"></div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#8B5CF6] group-hover:to-[#06B6D4] transition-all duration-300">
+                    <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#1e40af] group-hover:to-[#06B6D4] transition-all duration-300">
                       {skill.title}
                     </h3>
                     <p className="text-white/70 text-sm leading-relaxed">
