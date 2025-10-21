@@ -58,7 +58,7 @@ export default function Footer() {
   return (
     <>
       {/* 🌈 FOOTER */}
-      <footer className="relative bg-[#070615] text-gray-300 overflow-hidden">
+      <footer className="relative bg-[#b6b6c9f8] text-black overflow-hidden">
         {/* Top gradient line */}
         <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 animate-gradient-x" />
 
@@ -67,18 +67,18 @@ export default function Footer() {
           <div>
             <h2 className="text-2xl font-extrabold tracking-wide text-white">
               Atiq{" "}
-              <span className="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+              <span className="text-[#1e40af]">
                 Umer
               </span>
             </h2>
-            <p className="mt-3 text-gray-400 text-sm leading-relaxed">
+            <p className="mt-3 text-black text-sm leading-relaxed">
               Crafting elegant web experiences with WordPress, React, Djago and AI ✨
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="flex flex-col md:items-center">
-            <h3 className="text-white font-semibold mb-3 tracking-wider">
+            <h3 className="text-blue-800 font-semibold mb-3 tracking-wider">
               Quick Links
             </h3>
             <ul className="flex flex-col md:flex-row md:space-x-6 space-y-2 md:space-y-0 text-sm">
@@ -90,11 +90,11 @@ export default function Footer() {
                 >
                   <a
                     href={`#${link.toLowerCase()}`}
-                    className="font-medium text-gray-300 hover:text-white transition-colors duration-300"
+                    className="font-medium text-black hover:text-black transition-colors duration-300"
                   >
                     {link}
                   </a>
-                  <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 transition-all group-hover:w-full"></span>
+                  <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-gradient-to-r from-[white]/80 to-[white]/20 transition-all group-hover:w-full"></span>
                 </motion.li>
               ))}
             </ul>
@@ -102,7 +102,7 @@ export default function Footer() {
 
           {/* Socials */}
           <div className="flex flex-col md:items-end">
-            <h3 className="text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-[#8B5CF6] via-[#EC4899] to-[#9606d4ee] px-3 py-1 rounded-full mb-3 inline-block tracking-wider">
+            <h3 className="text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-blue-800 to-cyan-800 px-3 py-1 rounded-full mb-3 inline-block tracking-wider">
               Connect
             </h3>
             <div className="flex items-center space-x-5 mb-4">
@@ -120,7 +120,7 @@ export default function Footer() {
                   key={idx}
                   href={social.link}
                   target="_blank"
-                  className="hover:text-pink-500 transition-colors duration-300"
+                  className="hover:text-blue-800 transition-colors duration-300"
                   whileHover={{ scale: 1.2 }}
                 >
                   {social.icon}
@@ -131,7 +131,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom strip */}
-        <div className="border-t border-gray-800 text-center py-4 text-sm text-gray-500 relative z-10">
+        <div className="border-t border-black text-center py-4 text-sm text-black relative z-10">
           © {new Date().getFullYear()} Atiq Umer • All Rights Reserved
         </div>
 
@@ -146,7 +146,7 @@ export default function Footer() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen((v) => !v)}
-        className="fixed bottom-8 right-8 z-50 flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-full shadow-lg hover:shadow-pink-500/50 transition-all"
+        className="fixed bottom-8 right-8 z-50 flex items-center gap-2 bg-gradient-to-r from-blue-800 to-cyan-800 text-white px-4 py-2 rounded-full shadow-lg hover:shadow-pink-500/50 transition-all"
       >
         <MessageCircle size={20} />
         <span className="hidden sm:block font-medium text-sm">Ask Atiq</span>
@@ -163,11 +163,11 @@ export default function Footer() {
             className="fixed bottom-24 right-8 w-80 h-96 bg-[#0c0b18] text-gray-200 rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-purple-500/30 z-[60]"
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-3 flex justify-between items-center">
+            <div className="bg-gradient-to-r from-blue-800 to-cyan-800 p-3 flex justify-between items-center">
               <h3 className="font-semibold text-sm">Atiq Umer Chatbot 🤖</h3>
               <button
                 onClick={() => setIsOpen(false)}
-                className="hover:text-gray-300 p-1 rounded"
+                className="hover:text-black p-1 rounded"
               >
                 <X size={18} />
               </button>
@@ -186,8 +186,8 @@ export default function Footer() {
                   transition={{ duration: 0.18 }}
                   className={`p-2 rounded-lg max-w-[80%] ${
                     msg.sender === "bot"
-                      ? "bg-purple-600/20 text-purple-300 self-start"
-                      : "bg-purple-500/80 text-white self-end ml-auto"
+                      ? "bg-[#b6b6c9f8] text-black self-start"
+                      : "bg-[#b6b6c9f8] text-white self-end ml-auto"
                   }`}
                 >
                   {msg.text}
@@ -202,11 +202,11 @@ export default function Footer() {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleSend()}
                 placeholder="Ask about Atiq..."
-                className="flex-1 bg-transparent border border-purple-500/40 rounded-lg px-3 py-1 text-sm focus:outline-none"
+                className="flex-1 bg-transparent border border-blue-800 rounded-lg px-3 py-1 text-sm focus:outline-none"
               />
               <button
                 onClick={handleSend}
-                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:opacity-95 p-2 rounded-lg"
+                className="bg-gradient-to-r from-blue-800 to-cyan-800 hover:opacity-95 p-2 rounded-lg"
               >
                 <Send size={16} />
               </button>
