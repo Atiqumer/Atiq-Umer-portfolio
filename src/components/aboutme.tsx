@@ -62,13 +62,13 @@ export default function About() {
 
       {/* Section Header */}
       <div className="max-w-5xl mx-auto relative z-10 text-center mb-10">
-        <h2 className="text-white text-[28px] sm:text-[33px] md:text-[45px] font-bold uppercase">
+        <h2 className="text-black text-[28px] sm:text-[33px] md:text-[45px] font-bold uppercase">
           WHY{" "}
           <span className="bg-gradient-to-r text-[#1e40af] bg-clip-text text-transparent">
             ME
           </span>
         </h2>
-        <p className="text-white max-w-2xl mx-auto sm:text-[18px] leading-relaxed mt-4">
+        <p className="text-black max-w-2xl mx-auto sm:text-[18px] leading-relaxed mt-4">
           I believe in meaningful creation — combining technology, teamwork, and
           innovation to build solutions that inspire and perform. My mindset
           focuses on collaboration, creativity, and continuous improvement in
