@@ -84,17 +84,17 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="bg-[#070615f8] pt-16 sm:pt-20 md:pt-28 pb-16 px-6 overflow-hidden scroll-mt-24"
+      className="bg-[#b6b6c9f8] pt-16 sm:pt-20 md:pt-28 pb-16 px-6 overflow-hidden scroll-mt-24"
     >
       <div className="relative z-10 max-w-6xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-[34px] sm:text-[45px] md:text-[55px] font-extrabold uppercase tracking-wide text-white mb-16"
+          className="text-[34px] sm:text-[45px] md:text-[55px] font-extrabold uppercase tracking-wide text-black mb-16"
         >
           My{" "}
-          <span className="bg-gradient-to-r from-[#8B5CF6] via-[#EC4899] to-[#9606d4ee] bg-clip-text text-transparent">
+          <span className="text-[#1e40af] text-transparent">
             Expertise
           </span>
         </motion.h2>
@@ -121,13 +121,13 @@ const Skills = () => {
             >
               {/* Border Gradient Effect */}
               <div className="absolute inset-0 p-[2px] rounded-xl overflow-hidden pointer-events-none">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#8B5CF6]/80 via-[#EC4899]/80 to-[#9606d4ee]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl blur-lg"></div>
-                <div className="absolute inset-0 bg-gradient-to-br from-[#8B5CF6]/80 via-[#EC4899]/80 to-[#9606d4ee]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl animate-pulse-slow"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[black]  to-[white] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl blur-lg"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[black]  to-[white] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl animate-pulse-slow"></div>
               </div>
 
 
               {/* Card Foreground - Cleaned up to remove redundant motion background */}
-              <div className="relative z-10 flex flex-col items-center justify-center w-full h-full p-4 sm:p-6 bg-[#0f172a] backdrop-blur-2xl border border-[#8B5CF6]/20 group-hover:border-[#EC4899]/50 rounded-xl transition-all duration-500">
+              <div className="relative z-10 flex flex-col items-center justify-center w-full h-full p-4 sm:p-6 bg-[black]/50 backdrop-blur-2xl border border-[#8B5CF6]/20 hover:border-[#1e40af]/50 rounded-xl transition-all duration-500">
                 <motion.div
                   animate={{ y: [0, -4, 0] }}
                   transition={{
@@ -139,7 +139,7 @@ const Skills = () => {
                 >
                   {skill.icon}
                 </motion.div>
-                <h3 className="text-xs sm:text-sm font-semibold tracking-wide text-center group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-[#8B5CF6] group-hover:to-[#EC4899] group-hover:bg-clip-text transition-all duration-300">
+                <h3 className="text-xs sm:text-sm font-semibold tracking-wide text-center group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-[#155e75] group-hover:to-[#1e40af] group-hover:bg-clip-text transition-all duration-300">
                   {skill.name}
                 </h3>
               </div>
