@@ -49,31 +49,30 @@ const Hero = () => {
           </div>
         </motion.div>
         {/* ✅ Image Section */}
-
-        <motion.div
-
-          initial={{ opacity: 0, x: 50 }}
-
-          animate={{ opacity: 1, x: 0 }}
-
-          transition={{ duration: 0.8 }}
-
-          className="w-[220px] sm:w-[260px] md:w-[390px] lg:w-[400px] relative flex justify-center items-center"
-
-        >
-
-          <div className="w-full h-full rounded-full overflow-hidden shadow-[0_0_25px_#1e40af] hover:shadow-[0_0_45px_#155e75] transition duration-300">
-
-            <Image
-
-              src="/images/port.jpeg"
-              alt="user"
-              layout="responsive"
-              width={400}
-              height={400}
-              className="object-cover" />
-          </div>
-        </motion.div>
+<motion.div
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  // Sizing and centering maintained
+  className="w-[200px] md:w-[260px] lg:w-[300px] relative flex justify-center items-center mx-auto"
+>
+  <div
+    // KEY FIX: Use aspect-square to force the container to be a perfect square, 
+    // ensuring a perfect circle with rounded-full.
+    className="w-full h-auto aspect-square rounded-full overflow-hidden
+               // Multiple box-shadows for the oval glow effect (vertical offset)
+               shadow-[0_15px_20px_0px_rgba(30,64,175,0.7),_0_25px_50px_-5px_rgba(30,64,175,0.5)] 
+               hover:shadow-[0_20px_30px_0px_rgba(21,94,117,0.8),_0_40px_70px_-5px_rgba(21,94,117,0.6)]
+               transition duration-300 ease-in-out"
+  >
+    <Image
+      src="/images/port.jpg"
+      alt="Profile image"
+      layout="fill" // KEY CHANGE: Use layout="fill" when using aspect-square
+      className="object-cover"
+    />
+  </div>
+</motion.div>
       </div>
     </div>
   );
