@@ -62,7 +62,7 @@ const Hero = () => {
 
         >
 
-          <div className="w-full h-full rounded-full overflow-hidden shadow-[0_0_25px_#06b6d4] hover:shadow-[0_0_45px_#0891b2] transition duration-300">
+          <div className="w-full h-full rounded-full overflow-hidden shadow-[0_0_25px_#1e40af] hover:shadow-[0_0_45px_#155e75] transition duration-300">
 
             <Image
 
