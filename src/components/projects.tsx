@@ -9,7 +9,7 @@ const projects = [
     title: "NeuralFlex - Official Website",
     category: "WordPress, Elementor",
     description:
-      "Built a responsive company website for NeuralFlex AI using WordPress and Elementor. Integrated service sections, contact forms, and SEO-friendly layout. Optimized performance for fast, mobile-first loading.",
+      "Built a responsive company website for NeuralFlex AI using WordPress and Elementor. Integrated service sections and SEO-friendly layout. Optimized performance for fast, mobile-first loading.",
     image: "/images/neural.png",
    github: "https://github.com/MaryamRiaz-chattha/learning-assistant-ai",
     demo: "https://neuralflex.io/",
@@ -38,7 +38,7 @@ const projects = [
   },
   {
     title: "Breast Cancer Detection (ML)",
-    category: "| Python, Scikit-learn, Pandas, Seaborn ",
+    category: "Python, Scikit-learn, Pandas, Seaborn ",
     description:
       "Trained a logistic regression model on the Wisconsin dataset to classify tumors. Achieved ~95% test accuracy with confusion matrix and F1-score. Included EDA, scaling, and visual analysis.",
     image: "/images/ec.jpg",
@@ -75,7 +75,7 @@ const Projects = () => {
     <section id="projects" className="bg-[#b6b6c9f8] p-8 scroll-mt-24">
       <p className="text-center text-black text-[28px] sm:text-[33px] md:text-[45px] font-bold uppercase">
         My{" "}
-        <span className="bg-gradient-to-r text-[#1e40af] bg-clip-text text-transparent">
+        <span className=" text-[#1e40af]">
           Projects
         </span>
       </p>
@@ -99,7 +99,7 @@ const Projects = () => {
             />
 
             {/* Category */}
-            <h2 className="pt-3 px-4 text-xs font-semibold text-red-300 uppercase tracking-widest">
+            <h2 className="pt-3 px-4 text-xs font-semibold text-white uppercase tracking-widest">
               {project.category}
             </h2>
 
@@ -117,7 +117,7 @@ const Projects = () => {
                 {project.tech.map((t, idx) => (
                   <span
                     key={idx}
-                    className="bg-fuchsia-900/40 text-fuchsia-300 text-xs px-3 py-1 rounded-full"
+                    className="bg-[#b6b6c9f8] text-black text-xs px-3 py-1 rounded-full"
                   >
                     {t}
                   </span>
