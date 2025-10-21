@@ -22,12 +22,12 @@ const MobileNav: React.FC<Props> = ({ nav, closeNav }) => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-0 left-0 h-full w-4/5 max-w-xs bg-[#09101a] z-[10000] transform ${navAnimation} transition-transform duration-300`}
+        className={`fixed top-0 left-0 h-full w-4/5 max-w-xs bg-[#b6b6c9f8] z-[10000] transform ${navAnimation} transition-transform duration-300`}
       >
         {/* Close Button */}
         <button
           onClick={closeNav}
-          className="absolute top-6 right-6 w-10 h-10 text-pink-700 hover:text-pink-500 transition-colors"
+          className="absolute top-6 right-6 w-10 h-10 text-[black] hover:text-white transition-colors"
           aria-label="Close mobile menu"
         >
           <XMarkIcon className="w-full h-full" />
