@@ -49,13 +49,9 @@ const Hero = () => {
           </div>
         </motion.div>
         {/* ✅ Image Section */}
-
         <motion.div
-
           initial={{ opacity: 0, x: 50 }}
-
           animate={{ opacity: 1, x: 0 }}
-
           transition={{ duration: 0.8 }}
 
           className="w-[220px] md:w-[210px] lg:w-[350px] relative flex justify-center items-center mx-auto"
