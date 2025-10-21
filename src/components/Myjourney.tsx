@@ -68,7 +68,7 @@ setVisibleSteps((prev) => Array.from(new Set([...prev, stepId])));
    <div className="max-w-5xl mx-auto relative z-10 text-center mb-12">
     <h2 className="text-center text-black text-[28px] sm:text-[33px] md:text-[45px] font-bold uppercase">
      MY{" "}
-     <span className="bg-gradient-to-r text-[#1e40af] bg-clip-text text-transparent">
+     <span className="text-[#1e40af]">
 EDUCATION
      </span>
     </h2>

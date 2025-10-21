@@ -94,7 +94,7 @@ const Skills = () => {
           className="text-[28px] sm:text-[33px] md:text-[45px] font-bold uppercase text-black mb-16"
         >
           My{" "}
-          <span className="text-[#1e40af] text-transparent">
+          <span className="text-[#1e40af] ">
             Expertise
           </span>
         </motion.h2>

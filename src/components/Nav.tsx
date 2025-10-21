@@ -53,7 +53,7 @@ className="text-[#1e40af] font-medium text-lg relative group"
 
 {/* Mobile Menu Button */}
 <button
-className="md:hidden text-fuchsia-400 hover:text-fuchsia-300 transition p-2"
+className="md:hidden text-[#1e40af] hover:text-white-300 transition p-2"
 onClick={openNav}
 >
 <Menu size={28} />
