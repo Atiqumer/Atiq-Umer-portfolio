@@ -10,7 +10,7 @@ const projects = [
     description:
       "Built a responsive company website for NeuralFlex AI using WordPress and Elementor. Integrated service sections and SEO-friendly layout. Optimized performance for fast, mobile-first loading.",
     image: "/images/neural.png",
-   github: "https://github.com/MaryamRiaz-chattha/learning-assistant-ai",
+   github: "#",
     demo: "https://neuralflex.io/",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
   },
@@ -88,7 +88,7 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: i * 0.2 }}
             viewport={{ once: true }}
-            className="group relative h-full rounded-xl bg-[#111827]/60 backdrop-blur-md overflow-hidden shadow-lg border border-fuchsia-500 hover:shadow-[0_0_25px_#d946ef] transition"
+            className="group relative h-full rounded-xl bg-[#111827]/60 backdrop-blur-md overflow-hidden shadow-lg border border-cyan-800 hover:shadow-[0_0_25px_#155e75] transition"
           >
             {/* Image */}
             <img

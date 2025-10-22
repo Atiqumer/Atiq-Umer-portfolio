@@ -17,7 +17,7 @@ interface JourneyItem {
     title: string;
     institution: string;
     description: string;
-    icon: any; // Type for Lucide icon components
+    icon: React.ElementType; // Type for Lucide icon components
     year: string;
 }
 
