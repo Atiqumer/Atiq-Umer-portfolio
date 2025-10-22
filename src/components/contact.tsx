@@ -28,7 +28,7 @@ const Contact = () => {
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
-        className="w-full max-w-5xl flex flex-col lg:flex-row rounded-2xl shadow-xl border border-cyan-800 overflow-hidden backdrop-blur-md bg-[#0b0816]/60 "
+        className="w-full max-w-5xl flex flex-col lg:flex-row rounded-2xl shadow-xl border border-cyan-800 overflow-hidden backdrop-blur-md bg-[#b6b6c9f8] "
       >
         {/* Left Side: Contact Info */}
         <div className="lg:w-1/2 bg-gradient-to-r from-blue-800 to-cyan-800 p-8 flex flex-col justify-center gap-6 relative">
@@ -70,7 +70,7 @@ const Contact = () => {
                   type="text"
                   id="name"
                   placeholder="Enter your name"
-                  className="w-full px-4 py-3 bg-transparent outline-none rounded-lg text-black"
+                  className="w-full px-4 py-3 bg-transparent outline-none rounded-lg text-white"
                 />
               </div>
             </div>
