@@ -60,7 +60,7 @@ export default function Footer() {
       {/* 🌈 FOOTER */}
       <footer className="relative bg-[#b6b6c9f8] text-black overflow-hidden">
         {/* Top gradient line */}
-        <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 animate-gradient-x" />
+        <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-blue-800 to-cyan-800 animate-gradient-x" />
 
         <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-10 relative z-10">
           {/* Brand */}
