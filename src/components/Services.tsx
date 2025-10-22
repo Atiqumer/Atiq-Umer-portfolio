@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import {
   Atom,
   Brain,
-  Workflow,
   Cpu,
   Zap,
   Layers,

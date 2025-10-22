@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { BookOpen, Laptop, BrainCircuit, GraduationCap, Code } from "lucide-react";
+import { BookOpen, GraduationCap } from "lucide-react";
 
 // The updated education array based on your resume details
 const education = [

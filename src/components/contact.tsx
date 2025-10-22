@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Mail, User, MessageSquare, SendHorizonal } from "lucide-react";
+import { Mail, User, MessageSquare, SendHorizonal, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 
 const Contact = () => {
@@ -34,10 +34,10 @@ const Contact = () => {
         <div className="lg:w-1/2 bg-gradient-to-r from-blue-800 to-cyan-800 p-8 flex flex-col justify-center gap-6 relative">
           {/* Animated Glow */}
           <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-800 to-cyan-800 opacity-30 animate-pulse-slow"></div>
-          <h2 className="text-2xl sm:text-3xl font-bold z-10">
+          <h2 className="text-2xl text-white sm:text-3xl font-bold z-10">
             Let’s Connect!
           </h2>
-          <p className="text-black z-10">
+          <p className="text-white z-10">
             I’m always open for collaboration, project creation, or new
             opportunities. Feel free to reach out and let’s build something
             amazing together!
@@ -49,6 +49,13 @@ const Contact = () => {
               className="text-white font-semibold underline hover:text-blue-100 transition"
             >
               atiqumer15@gmail.com
+            </a>
+            <Phone className="text-[#b6b6c9f8] w-6 h-6" />
+            <a
+              href="mailto:atiqumer15@gmail.com"
+              className="text-white font-semibold hover:text-blue-100 transition"
+            >
+              0325-4243926
             </a>
           </div>
         </div>
