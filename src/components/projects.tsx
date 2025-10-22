@@ -13,7 +13,7 @@ const projects = [
     image: "/images/neural.png",
     github: "#",
     demo: "https://neuralflex.io/",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    tech: ["Wordpress", "Elementor", "WP-form", "Custom Themes"],
   },
   {
     title: "Employee Management System",
@@ -41,7 +41,7 @@ const projects = [
     category: "Python, Scikit-learn, Pandas, Seaborn ",
     description:
       "Trained a logistic regression model on the Wisconsin dataset to classify tumors. Achieved ~95% test accuracy with confusion matrix and F1-score. Included EDA, scaling, and visual analysis.",
-    image: "/images/ec.jpg",
+    image: "/images/b.jpg",
     github:
       "https://github.com/Atiqumer/Breast-Cancer-Detection",
     demo: "#",
@@ -55,18 +55,18 @@ const projects = [
     image: "/images/dubai.png",
     github: "#",
     demo: "https://stdubaitech.com/",
-    tech: ["HTML", "CSS"],
+    tech: ["Wordpress", "Elementor"],
   },
   {
     title: "Wide Box Cargo",
     category: "Wordpress, Elementor",
     description:
       "Designed and developed the official website for Wide Box Cargo (UAE), a licensed movers and packers company offering residential and commercial services across Dubai and the UAE. Built using WordPress, the site delivers a modern, SEO-friendly, and conversion-optimized experience that highlights the brand's reliability and service excellence..",
-    image: "/images/vote.png",
+    image: "/images/pr.png",
     github:
       "https://github.com/MaryamRiaz-chattha/Online_webbased_voting_system",
-    demo: "#",
-    tech: ["PHP", "MySQL", "Bootstrap"],
+    demo: "https://movingcompanydubai.ae/",
+    tech: ["Wordpress", "Elementor"],
   },
 ];
 
