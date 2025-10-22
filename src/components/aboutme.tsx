@@ -16,7 +16,7 @@ const AboutMe = [
     title: "Technical Proficiency & Adaptability",
     icon: Cpu,
     description:
-      "With expertise in Next.js, TypeScript, Tailwind CSS, and AI tools, I adapt quickly to new frameworks while maintaining clean, efficient, and scalable code for modern web projects.",
+      "With expertise in WordPress, Elementor Pro, React.js, Tailwind CSS, Django and AI tools, I adapt quickly new frameworks while maintaining clean, efficient, and scalable code for modern web projects.",
   },
   {
     id: 3,

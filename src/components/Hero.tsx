@@ -34,8 +34,8 @@ const Hero = () => {
             Welcome to my portfolio! I’m{" "}
             <span className="font-semibold">Atiq Umer</span>, a passionate
             learner and web developer skilled in{" "}
-            <span className="font-semibold">Next.js, TypeScript,</span> and{" "}
-            <span className="font-semibold">Tailwind CSS</span>. I love creating
+            <span className="font-semibold">WordPress, Elementor, Django, React.js, TypeScript,</span> and{" "}
+            <span className="font-semibold">Tailwind CSS, Bootstrap</span>. I love creating
             beautiful and interactive websites while exploring the world of{" "}
             <span className="font-semibold">AI-driven applications</span>.
           </p>
