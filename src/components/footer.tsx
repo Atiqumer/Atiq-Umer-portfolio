@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 
-import { Github, Linkedin, MessageCircle, Send, X } from "lucide-react";
+import { Github, Linkedin, Facebook, MessageCircle, Send, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Footer() {
@@ -65,7 +65,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-10 relative z-10">
           {/* Brand */}
           <div>
-            <h2 className="text-2xl font-extrabold tracking-wide text-white">
+            <h2 className="text-2xl font-extrabold tracking-wide text-blue-800">
               Atiq{" "}
               <span className="text-[#1e40af]">
                 Umer
@@ -114,6 +114,10 @@ export default function Footer() {
                 {
                   icon: <Linkedin className="w-6 h-6" />,
                   link: "https://www.linkedin.com/in/atiq-umer/",
+                },
+                {
+                  icon: <Facebook className="w-6 h-6" />,
+                  link: "https://www.facebook.com/share/1DGQ2vR4Bc/",
                 },
               ].map((social, idx) => (
                 <motion.a
