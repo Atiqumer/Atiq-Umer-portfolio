@@ -143,14 +143,14 @@ return (
     left ? "sm:pr-8" : "sm:pl-8"
    }`}
   >
-   <div className="bg-black/20 backdrop-blur-md border border-[#b6b6c9f8] rounded-lg p-6 hover:bg-black/40 hover:border-[white] hover:shadow-xl hover:shadow-[white]/20 transition-all duration-300">
+   <div className="bg-black/20 backdrop-blur-md border border-[#b6b6c9f8] rounded-lg p-6 hover:bg-black/40 hover:border-[#b6b6c9f8] hover:shadow-xl hover:shadow-[white]/20 transition-all duration-300">
     <span className="text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-blue-800 to-cyan-800 px-2 py-1 rounded-full mb-2 inline-block">
      {step.year}
     </span>
-    <h3 className="text-white font-semibold text-lg mb-2">
+    <h3 className="text-blue-800 font-semibold text-lg mb-2">
      {step.title}
     </h3>
-    <p className="text-white/70 text-sm leading-relaxed">
+    <p className="text-black/70 text-sm leading-relaxed">
            {step.description}
           </p>
          </div>
