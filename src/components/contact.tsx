@@ -31,7 +31,7 @@ const Contact = () => {
         className="w-full max-w-5xl flex flex-col lg:flex-row rounded-2xl shadow-xl border border-cyan-800 overflow-hidden backdrop-blur-md bg-[#0b0816]/60 "
       >
         {/* Left Side: Contact Info */}
-        <div className="lg:w-1/2 bg-gradient-to-r from-[#8B5CF6]/20 via-[#EC4899]/20 to-[#9606d4ee]/10 p-8 flex flex-col justify-center gap-6 relative">
+        <div className="lg:w-1/2 bg-gradient-to-r from-blue-800 to-cyan-800 p-8 flex flex-col justify-center gap-6 relative">
           {/* Animated Glow */}
           <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-800 to-cyan-800 opacity-30 animate-pulse-slow"></div>
           <h2 className="text-2xl sm:text-3xl font-bold z-10">
@@ -57,20 +57,20 @@ const Contact = () => {
         <div className="hidden lg:block w-0.5 bg-gradient-to-r from-blue-800 to-cyan-800 mx-0" />
 
         {/* Right Side: Contact Form */}
-        <div className="lg:w-1/2 p-8 z-10">
+        <div className="lg:w-1/2 p-8 z-10  ">
           <form className="space-y-6">
             {/* Name */}
             <div>
               <label htmlFor="name" className="block mb-2 text-sm font-medium">
-                Your 
+                Your Name
               </label>
-              <div className="flex items-center bg-gray-800 rounded-lg border border-gray-600 focus-within:border-fuchsia-500 focus-within:ring-2 focus-within:ring-fuchsia-500 transition">
+              <div className="flex items-center bg-gray-800 rounded-lg border border-white focus-within:border-[#b6b6c9f8] focus-within:ring-2 focus-within:ring-[#b6b6c9f8] transition">
                 <User className="text-blue-400 w-5 h-5 ml-3" />
                 <input
                   type="text"
                   id="name"
                   placeholder="Enter your name"
-                  className="w-full px-4 py-3 bg-transparent outline-none rounded-lg text-gray-200"
+                  className="w-full px-4 py-3 bg-transparent outline-none rounded-lg text-black"
                 />
               </div>
             </div>
@@ -80,7 +80,7 @@ const Contact = () => {
               <label htmlFor="email" className="block mb-2 text-sm font-medium">
                 Your Email
               </label>
-              <div className="flex items-center bg-gray-800 rounded-lg border border-gray-600 focus-within:border-fuchsia-500 focus-within:ring-2 focus-within:ring-fuchsia-500 transition">
+              <div className="flex items-center bg-gray-800 rounded-lg border border-white focus-within:border-[#b6b6c9f8] focus-within:ring-2 focus-within:ring-white transition">
                 <Mail className="text-blue-400 w-5 h-5 ml-3" />
                 <input
                   type="email"
@@ -99,7 +99,7 @@ const Contact = () => {
               >
                 Message
               </label>
-              <div className="flex items-start bg-gray-800 rounded-lg border border-gray-600 focus-within:border-fuchsia-500 focus-within:ring-2 focus-within:ring-fuchsia-500 transition">
+              <div className="flex items-start bg-gray-800 rounded-lg border border-white focus-within:border-f[#b6b6c9f8] focus-within:ring-2 focus-within:ring-white transition">
                 <MessageSquare className="text-blue-400 w-5 h-5 ml-3 mt-3" />
                 <textarea
                   id="message"
@@ -113,7 +113,7 @@ const Contact = () => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full flex items-center justify-center gap-2 py-3 rounded-lg bg-gradient-to-r from-blue-800 to-cyan-800 font-semibold text-lg shadow-md hover:opacity-90 transition hover:scale-[1.02]"
+              className="w-full flex items-center justify-center text-white gap-2 py-3 rounded-lg bg-gradient-to-r from-blue-800 to-cyan-800 font-semibold text-lg shadow-md hover:opacity-90 transition hover:scale-[1.02]"
             >
               <SendHorizonal className="w-5 h-5" />
               Send Message
