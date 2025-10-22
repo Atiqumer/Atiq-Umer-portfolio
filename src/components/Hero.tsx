@@ -41,7 +41,7 @@ const Hero = () => {
           </p>
           {/* Buttons */}
           <div className="mt-6 flex flex-col sm:flex-row items-center gap-4">
-            <Link href="/path/to/your-cv.pdf" download>
+            <Link href="https://drive.google.com/file/d/1DFUCtQwvaOPibxOfPm8oEkvv0DXueFv1/view?usp=sharing" download>
               <button className="bg-gradient-to-r from-blue-800 to-cyan-800 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl">
                 Download CV
               </button>
