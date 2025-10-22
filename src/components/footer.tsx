@@ -16,9 +16,9 @@ export default function Footer() {
     hello: "Hello there! I'm Atiq Umer's personal chatbot. 😊",
     who: "Atiq Umer is a passionate Computer Scientist and AI Enthusiast specializing in Next.js, TypeScript, and Generative AI.",
     skills:
-      "Atiq’s skills include TypeScript, Next.js, Tailwind CSS, Python, FastAPI, ShadCN UI, Git, and Prompt Engineering.",
+      "Atiq’s skills include Wordpress, React.js, Tailwind CSS, BootStrap, Django, Python, FastAPI, Git, and Prompt Engineering.",
     projects:
-      "She has built projects like a Portfolio Website, E-commerce website, Netflix Clone, 3D Login Form, School Finder Chatbot, and an AI PDF Reader.",
+      "He has built projects like a Portfolio Website, Company Wordpress website, EMP Management System, 3D Login Form and Breast Cancer Detection Model.",
     goals:
       "Atiq’s goal is to become an advanced AI Engineer and create impactful web applications blending creativity and intelligence.",
     contact: "You can connect with Atiq on LinkedIn or GitHub! 💼",
