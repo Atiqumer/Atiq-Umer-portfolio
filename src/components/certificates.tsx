@@ -6,11 +6,11 @@ import { motion } from "framer-motion";
 const Certificates = () => {
   const certificates = [
     {
-      title: "Cracking the Hiring Code",
-      issuer: "Microsoft Learn Student Ambassadors",
+      title: "WordPress Elementor Course",
+      issuer: "Udemy",
       year: "2025",
-      link: "",
-      image: "/images/cer1.jpeg",
+      link: "https://www.udemy.com/certificate/UC-2c1b8e83-a6c1-462f-b10b-f00108b8229c/",
+      image: "/images/cer7.png",
     },
     {
       title: "Design Prompts for Everyday Work Tasks",
@@ -23,22 +23,15 @@ const Certificates = () => {
       title: "YOAST WORDPRESS FOR BEGINNER",
       issuer: "Yoast",
       year: "2025",
-      link: "https://assessment.panaversity.org/dashboard/results",
+      link: "https://academy.yoast.com/certificate/8218/1908341/e8a5e73cdc6a83eaacec7e927addc96d/1/",
       image: "/images/cer3.jpeg",
     },
     {
-      title: "AI for Beginner",
-      issuer: "HP-LIFE",
+      title: "Advanced Wordpress Course for Professionals",
+      issuer: "Udemy",
       year: "2025",
-      link: "https://www.life-global.org/certificate/adbbbc99-7e5f-4320-9995-5f876c76029c",
-      image: "/images/cer4.jpeg",
-    },
-    {
-      title: "Certificate of Appreciation For Volunteering",
-      issuer: "LOOPLAB.com",
-      year: "2025",
-      link: "https://coursera.org/share/0d622978e4fedcccdbc648bf52837080",
-      image: "/image/.jpeg",
+      link: "https://www.udemy.com/certificate/UC-f718aaa1-bebc-496c-bf18-11303c107dab/",
+      image: "/images/cer9.png",
     },
     {
       title: "ChatGPT Prompt Engineering for Developers!",
@@ -46,6 +39,20 @@ const Certificates = () => {
       year: "2025",
       link: "https://learn.deeplearning.ai/accomplishments/1639d217-2f0b-494d-9aad-6d15df47d3a1?usp=sharing",
       image: "/images/cer5.jpeg",
+    },
+    {
+      title: "Certificate of Appreciation For Volunteering",
+      issuer: "LoopLab.com",
+      year: "2025",
+      link: "https://coursera.org/share/0d622978e4fedcccdbc648bf52837080",
+      image: "/images/cer6.png",
+    },
+    {
+      title: "AI Python for Beginners!",
+      issuer: "DEEP LEARNING.AI",
+      year: "2025",
+      link: "https://learn.deeplearning.ai/accomplishments/fffb74de-e5dc-4d67-a004-a9ee490f4c4c?usp=sharing",
+      image: "/images/cer8.png",
     },
   ];
 
