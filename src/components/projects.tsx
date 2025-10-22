@@ -58,10 +58,10 @@ const projects = [
     tech: ["HTML", "CSS"],
   },
   {
-    title: "Web-Based Voting System",
-    category: "Backend Project",
+    title: "Wide Box Cargo",
+    category: "Wordpress, Elementor",
     description:
-      "A secure voting system built using PHP, MySQL, and Bootstrap that allows users to vote and view results in real-time.",
+      "Designed and developed the official website for Wide Box Cargo (UAE), a licensed movers and packers company offering residential and commercial services across Dubai and the UAE. Built using WordPress, the site delivers a modern, SEO-friendly, and conversion-optimized experience that highlights the brand's reliability and service excellence..",
     image: "/images/vote.png",
     github:
       "https://github.com/MaryamRiaz-chattha/Online_webbased_voting_system",
