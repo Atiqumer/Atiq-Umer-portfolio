@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import Image from "next/image"; // <--- 1. Imported next/image
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const projects = [
@@ -26,26 +26,15 @@ const projects = [
     tech: ["Django", "PostgreSQL" ,"HTMX", "Bootstrap"],
   },
   {
-    title: "Monal London Restaurant Website",
-    category: " WordPress, Elementor",
+    title: "Wide Box Cargo",
+    category: "Wordpress, Elementor",
     description:
-      "Developed a modern restaurant website during my Internship at DI TECH SOLUTIONS. Added reservation features, responsive design, and custom content. Enhanced site speed and UX for mobile users.",
-    image: "/images/monal.png",
+      "Designed and developed the official website for Wide Box Cargo (UAE), a licensed movers and packers company offering residential and commercial services across Dubai and the UAE. Built using WordPress, the site delivers a modern, SEO-friendly, and conversion-optimized experience that highlights the brand's reliability and service excellence..",
+    image: "/images/pr.png",
     github:
-      "#",
-    demo: "https://monallondon.com/",
-    tech: ["Python", "Google Colab", "Generative AI"],
-  },
-  {
-    title: "Breast Cancer Detection (ML)",
-    category: "Python, Scikit-learn, Pandas, Seaborn ",
-    description:
-      "Trained a logistic regression model on the Wisconsin dataset to classify tumors. Achieved ~95% test accuracy with confusion matrix and F1-score. Included EDA, scaling, and visual analysis.",
-    image: "/images/b.jpg",
-    github:
-      "https://github.com/Atiqumer/Breast-Cancer-Detection",
-    demo: "#",
-    tech: ["Python", "Scikit-learn", "Pandas", "Seaborn" ],
+      "https://github.com/MaryamRiaz-chattha/Online_webbased_voting_system",
+    demo: "https://movingcompanydubai.ae/",
+    tech: ["Wordpress", "Elementor"],
   },
   {
     title: "ST Dubai Tech - Official Website",
@@ -58,16 +47,29 @@ const projects = [
     tech: ["Wordpress", "Elementor"],
   },
   {
-    title: "Wide Box Cargo",
-    category: "Wordpress, Elementor",
+    title: "Breast Cancer Detection (ML)",
+    category: "Python, Scikit-learn, Pandas, Seaborn ",
     description:
-      "Designed and developed the official website for Wide Box Cargo (UAE), a licensed movers and packers company offering residential and commercial services across Dubai and the UAE. Built using WordPress, the site delivers a modern, SEO-friendly, and conversion-optimized experience that highlights the brand's reliability and service excellence..",
-    image: "/images/pr.png",
+      "Trained a logistic regression model on the Wisconsin dataset to classify tumors. Achieved ~95% test accuracy with confusion matrix and F1-score. Included EDA, scaling, and visual analysis.",
+    image: "/images/b.jpg",
     github:
-      "https://github.com/MaryamRiaz-chattha/Online_webbased_voting_system",
-    demo: "https://movingcompanydubai.ae/",
-    tech: ["Wordpress", "Elementor"],
+      "https://github.com/Atiqumer/Breast-Cancer-Detection",
+    demo: "#",
+    tech: ["Python", "Scikit-learn", "Pandas", "Seaborn" ],
   },
+  
+  {
+    title: "Monal London Restaurant Website",
+    category: " WordPress, Elementor",
+    description:
+      "Developed a modern restaurant website during my Internship at DI TECH SOLUTIONS. Added reservation features, responsive design, and custom content. Enhanced site speed and UX for mobile users.",
+    image: "/images/monal.png",
+    github:
+      "#",
+    demo: "https://monallondon.com/",
+    tech: ["Wordpress", "Elementor", "WP-form", "Custom Themes"],
+  },
+  
 ];
 
 const Projects = () => {
@@ -96,9 +98,9 @@ const Projects = () => {
               className="h-48 w-full object-cover transition duration-500 group-hover:scale-105"
               src={project.image}
               alt={project.title}
-              width={500} // Added fixed width/height for Next.js Image component
-              height={192} // h-48 translates to 192px (48 * 4)
-              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw" 
+              width={500}
+              height={192}
+              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
             />
 
             {/* Category */}
@@ -148,7 +150,7 @@ const Projects = () => {
                   </svg>
                 </Link>
 
-                {/* Vercel / Demo */}
+                {/* Live Demo Link (REPLACED Vercel icon with External Link icon) */}
                 {project.demo !== "#" && (
                   <Link
                     href={project.demo}
@@ -159,10 +161,17 @@ const Projects = () => {
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-6 w-6"
-                      fill="currentColor"
                       viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     >
-                      <path d="M12 2L1 21h22L12 2z" />
+                      {/* External Link Icon (Arrow pointing out of a box) */}
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
                     </svg>
                   </Link>
                 )}
