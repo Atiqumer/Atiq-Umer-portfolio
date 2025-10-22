@@ -53,12 +53,12 @@ const Certificates = () => {
     // ✅ Section with ID for navbar smooth scroll
     <section
       id="certificates"
-      className="bg-[#070615f8] text-white py-16 px-6 scroll-mt-20"
+      className="bg-[#b6b6c9f8] text-white py-16 px-6 scroll-mt-20"
     >
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 uppercase">
+        <h2 className="text-3xl sm:text-4xl text-black font-bold text-center mb-12 uppercase">
           My{" "}
-          <span className="bg-gradient-to-r from-[#8B5CF6] via-[#EC4899] to-[#9606d4ee] bg-clip-text text-transparent">
+          <span className="text-blue-800">
             Certificates
           </span>
         </h2>
@@ -75,9 +75,9 @@ const Certificates = () => {
                 ease: "easeOut",
               }}
               viewport={{ once: true, amount: 0.2 }}
-              className="bg-[#0b0816] border border-fuchsia-900 rounded-2xl overflow-hidden hover:shadow-[0_0_20px_#d946ef] transition transform hover:-translate-y-2"
+              className="bg-[#545868] border border-cyan-800 rounded-2xl overflow-hidden hover:shadow-[0_0_20px_#155e75] transition transform hover:-translate-y-2"
             >
-              <div className="relative w-full h-56 bg-black flex items-center justify-center">
+              <div className="relative w-full h-56 bg-[#ebebebf8] flex items-center justify-center">
                 <Image
                   src={cert.image}
                   alt={cert.title}
@@ -96,7 +96,7 @@ const Certificates = () => {
                   href={cert.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-3 inline-block text-fuchsia-500 border border-fuchsia-500 px-4 py-2 rounded-lg hover:bg-fuchsia-500 hover:text-black transition"
+                  className="mt-3 inline-block text-white border border-white px-4 py-2 rounded-lg hover:bg-white hover:text-black transition"
                 >
                   View Certificate
                 </a>
