@@ -62,7 +62,7 @@ const Contact = () => {
             {/* Name */}
             <div>
               <label htmlFor="name" className="block mb-2 text-sm font-medium">
-                Your Name
+                Your 
               </label>
               <div className="flex items-center bg-gray-800 rounded-lg border border-gray-600 focus-within:border-fuchsia-500 focus-within:ring-2 focus-within:ring-fuchsia-500 transition">
                 <User className="text-blue-400 w-5 h-5 ml-3" />
