@@ -95,15 +95,15 @@ return (
   style={{ transitionDelay: `${index * 200}ms` }}
  >
   {/* Icon */}
-  <div className="z-10 flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-[#8B5CF6] via-[#EC4899] to-[#9606d4ee] flex items-center justify-center shadow-lg shadow-[#8B5CF6]/50">
+  <div className="z-10 flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-blue-800 to-cyan-800 flex items-center justify-center shadow-lg shadow-[#8B5CF6]/50">
    <Icon className="w-6 h-6 text-white" />
   </div>
 
   {/* Content */}
-  <div className="ml-6 bg-black/30 backdrop-blur-md border border-[#8B5CF6]/30 rounded-lg p-5 hover:bg-black/50 hover:border-[#EC4899]/50 hover:shadow-xl hover:shadow-[#EC4899]/30 transition-all duration-300 flex-1">
+  <div className="ml-6 bg-black/30 backdrop-blur-md border border-[#8B5CF6]/30 rounded-lg p-5 hover:bg-black/50 hover:border-[#155e75] hover:shadow-xl hover:shadow-[#155e75] transition-all duration-300 flex-1">
    <div className="flex justify-between items-center mb-2">
     <h3 className="text-white font-semibold">{step.title}</h3>
-    <span className="text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-[#8B5CF6] via-[#EC4899] to-[#9606d4ee] px-2 py-1 rounded-full">
+    <span className="text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-blue-800 to-cyan-800 px-2 py-1 rounded-full">
      {step.year}
     </span>
    </div>
@@ -118,7 +118,7 @@ return (
    {/* Desktop Timeline */}
    <div className="hidden lg:block relative max-w-6xl mx-auto">
     {/* Vertical Center Line */}
-    <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-white/20 h-full rounded-full shadow-lg shadow-[#06B6D4]/50"></div>
+    <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-white h-full rounded-full shadow-lg shadow-[#155e75]"></div>
 
     <div className="space-y-16">
      {education.map((step, index) => {
@@ -143,8 +143,8 @@ return (
     left ? "sm:pr-8" : "sm:pl-8"
    }`}
   >
-   <div className="bg-black/20 backdrop-blur-md border border-[#8B5CF6]/30 rounded-lg p-6 hover:bg-black/40 hover:border-[#EC4899]/50 hover:shadow-xl hover:shadow-[#EC4899]/30 transition-all duration-300">
-    <span className="text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-[#8B5CF6] via-[#EC4899] to-[#9606d4ee] px-2 py-1 rounded-full mb-2 inline-block">
+   <div className="bg-black/20 backdrop-blur-md border border-[#b6b6c9f8] rounded-lg p-6 hover:bg-black/40 hover:border-[white] hover:shadow-xl hover:shadow-[white]/20 transition-all duration-300">
+    <span className="text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-blue-800 to-cyan-800 px-2 py-1 rounded-full mb-2 inline-block">
      {step.year}
     </span>
     <h3 className="text-white font-semibold text-lg mb-2">
@@ -159,10 +159,10 @@ return (
         {/* Icon in center */}
         <div className="absolute left-1/2 transform -translate-x-1/2 z-10">
          <div className="relative group">
-          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#8B5CF6] via-[#EC4899] to-[#06B6D4] p-2 flex items-center justify-center shadow-lg shadow-[#8B5CF6]/50 group-hover:shadow-[#EC4899]/70 transition-all duration-300">
+          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-800 to-cyan-800 p-2 flex items-center justify-center shadow-lg shadow-[#8B5CF6]/50 group-hover:shadow-[#155e75] transition-all duration-300">
            <Icon className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300" />
           </div>
-          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#8B5CF6] via-[#EC4899] to-[#06B6D4] opacity-0 group-hover:opacity-40 group-hover:animate-ping transition-opacity duration-300"></div>
+          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-800 to-cyan-800 opacity-0 group-hover:opacity-40 group-hover:animate-ping transition-opacity duration-300"></div>
          </div>
         </div>
        </div>
