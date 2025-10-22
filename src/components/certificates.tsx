@@ -54,6 +54,13 @@ const Certificates = () => {
       link: "https://learn.deeplearning.ai/accomplishments/fffb74de-e5dc-4d67-a004-a9ee490f4c4c?usp=sharing",
       image: "/images/cer8.png",
     },
+    {
+      title: "Start Writing Prompts like a Pro",
+      issuer: "Google",
+      year: "2025",
+      link: "https://www.coursera.org/account/accomplishments/verify/936WU5G4BPO8",
+      image: "/images/cer10.png",
+    },
   ];
 
   return (
