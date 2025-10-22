@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image"; // <--- 1. Imported next/image
 import { motion } from "framer-motion";
 
 const projects = [
@@ -10,7 +11,7 @@ const projects = [
     description:
       "Built a responsive company website for NeuralFlex AI using WordPress and Elementor. Integrated service sections and SEO-friendly layout. Optimized performance for fast, mobile-first loading.",
     image: "/images/neural.png",
-   github: "#",
+    github: "#",
     demo: "https://neuralflex.io/",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
   },
@@ -90,11 +91,14 @@ const Projects = () => {
             viewport={{ once: true }}
             className="group relative h-full rounded-xl bg-[#111827]/60 backdrop-blur-md overflow-hidden shadow-lg border border-cyan-800 hover:shadow-[0_0_25px_#155e75] transition"
           >
-            {/* Image */}
-            <img
+            {/* Image (FIXED: Using next/image) */}
+            <Image
               className="h-48 w-full object-cover transition duration-500 group-hover:scale-105"
               src={project.image}
               alt={project.title}
+              width={500} // Added fixed width/height for Next.js Image component
+              height={192} // h-48 translates to 192px (48 * 4)
+              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw" 
             />
 
             {/* Category */}

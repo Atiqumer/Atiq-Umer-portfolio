@@ -13,12 +13,12 @@ import {
 
 // Define the structure for data items
 interface JourneyItem {
-    id: number;
-    title: string;
-    institution: string;
-    description: string;
-    icon: React.ElementType; // Type for Lucide icon components
-    year: string;
+  id: number;
+  title: string;
+  institution: string;
+  description: string;
+  icon: React.ElementType; // Type for Lucide icon components (TypeScript fix)
+  year: string;
 }
 
 // Experience Data (Sorted by most recent year/date first)
@@ -83,8 +83,8 @@ const TimelineSection = memo(({ data, heading, id }: { data: JourneyItem[], head
 
   // The steps are identified by their unique combined ID (section ID + step ID)
   const stepsData = useMemo(() => data.map(item => ({
-      ...item,
-      uniqueId: `${id}-${item.id}` // Use a unique ID for the observer target
+    ...item,
+    uniqueId: `${id}-${item.id}` // Use a unique ID for the observer target
   })), [data, id]);
 
   useEffect(() => {
@@ -104,8 +104,8 @@ const TimelineSection = memo(({ data, heading, id }: { data: JourneyItem[], head
     // Find and observe elements unique to this section
     const sectionElement = document.getElementById(id);
     if (sectionElement) {
-        const steps = sectionElement.querySelectorAll("[data-step-id]");
-        steps.forEach((el) => observer.observe(el));
+      const steps = sectionElement.querySelectorAll("[data-step-id]");
+      steps.forEach((el) => observer.observe(el));
     }
 
     return () => observer.disconnect();
@@ -136,11 +136,10 @@ const TimelineSection = memo(({ data, heading, id }: { data: JourneyItem[], head
               <div
                 key={step.id}
                 data-step-id={step.id} // Changed to data-step-id for clarity
-                className={`relative flex items-start ${
-                  visible
+                className={`relative flex items-start ${visible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-8"
-                } transition-all duration-700 ease-out`}
+                  } transition-all duration-700 ease-out`}
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
                 {/* Icon */}
@@ -180,19 +179,16 @@ const TimelineSection = memo(({ data, heading, id }: { data: JourneyItem[], head
               <div
                 key={step.id}
                 data-step-id={step.id} // Changed to data-step-id for clarity
-                className={`relative flex items-center ${
-                  left ? "justify-start" : "justify-end"
-                } ${
-                  visible
+                className={`relative flex items-center ${left ? "justify-start" : "justify-end"
+                  } ${visible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-8"
-                } transition-all duration-700 ease-out`}
+                  } transition-all duration-700 ease-out`}
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
                 <div
-                  className={`w-full sm:w-5/12 px-4 ${
-                    left ? "sm:pr-8" : "sm:pl-8"
-                  }`}
+                  className={`w-full sm:w-5/12 px-4 ${left ? "sm:pr-8" : "sm:pl-8"
+                    }`}
                 >
                   <div className="bg-black/20 backdrop-blur-md border border-[#b6b6c9f8] rounded-lg p-6 hover:bg-black/40 hover:border-[#b6b6c9f8] hover:shadow-xl hover:shadow-[white]/20 transition-all duration-300">
                     <span className="text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-blue-800 to-cyan-800 px-2 py-1 rounded-full mb-2 inline-block">
@@ -226,6 +222,9 @@ const TimelineSection = memo(({ data, heading, id }: { data: JourneyItem[], head
   );
 });
 
+// FIX: Explicitly setting the displayName property to resolve the linter error
+TimelineSection.displayName = 'TimelineSection';
+
 // --- 3. MAIN WRAPPER COMPONENT ---
 
 export default function PortfolioJourney() {
@@ -248,10 +247,10 @@ export default function PortfolioJourney() {
 
       {/* RENDER EXPERIENCE TIMELINE FIRST */}
       <TimelineSection data={experience} heading="EXPERIENCE" id="experience-section" />
-      
+
       {/* RENDER EDUCATION TIMELINE SECOND */}
       <TimelineSection data={education} heading="EDUCATION" id="education-section" />
-      
+
     </section>
   );
 }
