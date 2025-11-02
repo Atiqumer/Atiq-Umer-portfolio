@@ -6,14 +6,13 @@ const TextEffect = () => {
       sequence={[
         "Software Engineer",
         1400,
-        "Coder",
+        "Wordpress Developer",
         1500,
         "Web Developer",
         1300,
         "Programmer",
         1500,
-        "Designer",
-        1500,
+        
       ]}
       speed={50}
       className="text-[2rem] md:text-[3rem]  text-blue-800 font-bold"
