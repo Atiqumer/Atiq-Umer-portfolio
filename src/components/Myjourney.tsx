@@ -9,19 +9,17 @@ import {
   BookOpen,
 } from "lucide-react";
 
-// --- 1. DATA DEFINITIONS ---
+// --- 1. DATA DEFINITIONS (UNCHANGED) ---
 
-// Define the structure for data items
 interface JourneyItem {
   id: number;
   title: string;
   institution: string;
   description: string;
-  icon: React.ElementType; // Type for Lucide icon components (TypeScript fix)
+  icon: React.ElementType; 
   year: string;
 }
 
-// Experience Data (Sorted by most recent year/date first)
 const experience: JourneyItem[] = [
   {
     id: 101,
@@ -52,7 +50,6 @@ const experience: JourneyItem[] = [
   },
 ];
 
-// Education Data (Sorted by most recent year first)
 const education: JourneyItem[] = [
   {
     id: 201,
@@ -74,17 +71,14 @@ const education: JourneyItem[] = [
   },
 ];
 
+// --- 2. TIMELINE SECTION COMPONENT (Responsive Date Badge Fix) ---
 
-// --- 2. TIMELINE SECTION COMPONENT (Moved outside and memoized for stability) ---
-
-// This component now handles its own state for visibility, making the observer reliable.
 const TimelineSection = memo(({ data, heading, id }: { data: JourneyItem[], heading: string, id: string }) => {
   const [visibleSteps, setVisibleSteps] = useState<number[]>([]);
 
-  // The steps are identified by their unique combined ID (section ID + step ID)
   const stepsData = useMemo(() => data.map(item => ({
     ...item,
-    uniqueId: `${id}-${item.id}` // Use a unique ID for the observer target
+    uniqueId: `${id}-${item.id}` 
   })), [data, id]);
 
   useEffect(() => {
@@ -92,7 +86,6 @@ const TimelineSection = memo(({ data, heading, id }: { data: JourneyItem[], head
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Read the unique ID from the observed element
             const stepId = Number(entry.target.getAttribute("data-step-id"));
             setVisibleSteps((prev) => Array.from(new Set([...prev, stepId])));
           }
@@ -101,7 +94,6 @@ const TimelineSection = memo(({ data, heading, id }: { data: JourneyItem[], head
       { threshold: 0.3 }
     );
 
-    // Find and observe elements unique to this section
     const sectionElement = document.getElementById(id);
     if (sectionElement) {
       const steps = sectionElement.querySelectorAll("[data-step-id]");
@@ -113,9 +105,9 @@ const TimelineSection = memo(({ data, heading, id }: { data: JourneyItem[], head
 
   return (
     <div id={id} className="pt-16 max-w-7xl mx-auto relative z-10">
-      {/* Header */}
+      {/* Header (Ensured smooth text scaling) */}
       <div className="text-center mb-12">
-        <h2 className="text-center text-black text-[28px] sm:text-[33px] md:text-[45px] font-bold uppercase">
+        <h2 className="text-center text-black text-3xl sm:text-4xl md:text-5xl font-bold uppercase">
           MY{" "}
           <span className="text-[#1e40af]">
             {heading}
@@ -124,7 +116,7 @@ const TimelineSection = memo(({ data, heading, id }: { data: JourneyItem[], head
       </div>
 
       {/* Mobile Timeline */}
-      <div className="lg:hidden relative max-w-md mx-auto">
+      <div className="lg:hidden relative max-w-md mx-auto px-4"> {/* Added px-4 for safe padding on mobile */}
         {/* Vertical Line */}
         <div className="absolute left-6 top-0 w-1 h-full bg-white/20 rounded-full"></div>
 
@@ -135,7 +127,7 @@ const TimelineSection = memo(({ data, heading, id }: { data: JourneyItem[], head
             return (
               <div
                 key={step.id}
-                data-step-id={step.id} // Changed to data-step-id for clarity
+                data-step-id={step.id}
                 className={`relative flex items-start ${visible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-8"
@@ -149,9 +141,10 @@ const TimelineSection = memo(({ data, heading, id }: { data: JourneyItem[], head
 
                 {/* Content */}
                 <div className="ml-6 bg-black/30 backdrop-blur-md border border-[#8B5CF6]/30 rounded-lg p-5 hover:bg-black/50 hover:border-[#155e75] hover:shadow-xl hover:shadow-[#155e75] transition-all duration-300 flex-1">
-                  <div className="flex justify-between items-center mb-2">
-                    <h3 className="text-white font-semibold">{step.title}</h3>
-                    <span className="text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-blue-800 to-cyan-800 px-2 py-1 rounded-full">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2"> {/* Changed to flex-col on mobile, flex-row on sm+ */}
+                    <h3 className="text-white font-semibold text-base mb-1 sm:mb-0 sm:mr-4">{step.title}</h3>
+                    {/* *** DATE BADGE IMPROVEMENT: Added flex-shrink-0 to prevent compression *** */}
+                    <span className="text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-blue-800 to-cyan-800 px-2 py-1 rounded-full flex-shrink-0">
                       {step.year}
                     </span>
                   </div>
@@ -178,7 +171,7 @@ const TimelineSection = memo(({ data, heading, id }: { data: JourneyItem[], head
             return (
               <div
                 key={step.id}
-                data-step-id={step.id} // Changed to data-step-id for clarity
+                data-step-id={step.id} 
                 className={`relative flex items-center ${left ? "justify-start" : "justify-end"
                   } ${visible
                     ? "opacity-100 translate-y-0"
@@ -187,11 +180,12 @@ const TimelineSection = memo(({ data, heading, id }: { data: JourneyItem[], head
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
                 <div
-                  className={`w-full sm:w-5/12 px-4 ${left ? "sm:pr-8" : "sm:pl-8"
+                  className={`w-full lg:w-5/12 px-4 ${left ? "lg:pr-8" : "lg:pl-8" // Used lg: prefix for desktop spacing
                     }`}
                 >
                   <div className="bg-black/20 backdrop-blur-md border border-[#b6b6c9f8] rounded-lg p-6 hover:bg-black/40 hover:border-[#b6b6c9f8] hover:shadow-xl hover:shadow-[white]/20 transition-all duration-300">
-                    <span className="text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-blue-800 to-cyan-800 px-2 py-1 rounded-full mb-2 inline-block">
+                    {/* *** DATE BADGE (Desktop) - No major change needed, size is fine *** */}
+                    <span className="text-sm font-semibold text-white bg-gradient-to-r from-blue-800 to-cyan-800 px-2 py-1 rounded-full mb-2 inline-block">
                       {step.year}
                     </span>
                     <h3 className="text-white font-semibold text-lg mb-1">
@@ -222,10 +216,9 @@ const TimelineSection = memo(({ data, heading, id }: { data: JourneyItem[], head
   );
 });
 
-// FIX: Explicitly setting the displayName property to resolve the linter error
 TimelineSection.displayName = 'TimelineSection';
 
-// --- 3. MAIN WRAPPER COMPONENT ---
+// --- 3. MAIN WRAPPER COMPONENT (UNCHANGED) ---
 
 export default function PortfolioJourney() {
   return (
