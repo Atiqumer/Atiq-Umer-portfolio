@@ -31,10 +31,10 @@ const Hero = () => {
           </div>
           {/* Description */}
           <p className="mt-4 text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] text-gray-950 max-w-[600px] mx-auto lg:mx-0 leading-relaxed">
-            Welcome to my portfolio! I’m{" "}
+          I’m{" "}
             <span className="font-semibold">Atiq Umer</span>, a passionate
             learner and web developer skilled in{" "}
-            <span className="font-semibold">WordPress, Elementor, Django, React.js, TypeScript,</span> and{" "}
+            <span className="font-semibold">WordPress, Elementor, Django, React.js, </span> and{" "}
             <span className="font-semibold">Tailwind CSS, Bootstrap</span>. I love creating
             beautiful and interactive websites while exploring the world of{" "}
             <span className="font-semibold">AI-driven applications</span>.
@@ -69,7 +69,7 @@ const Hero = () => {
 >
 
             <Image
-              src="/images/port.jpg"
+              src="/images/p.jpg"
               alt="user"
               layout="responsive"
               width={400}
@@ -82,7 +82,5 @@ const Hero = () => {
   );
 
 };
-
-
 
 export default Hero;
