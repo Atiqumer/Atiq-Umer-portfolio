@@ -69,7 +69,7 @@ const Hero = () => {
 >
 
             <Image
-              src="/images/p.jpg"
+              src="/images/port.jpg"
               alt="user"
               layout="responsive"
               width={400}

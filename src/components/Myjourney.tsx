@@ -26,27 +26,45 @@ const experience: JourneyItem[] = [
     title: "Virtual Tech Assistant",
     institution: "NeuralFlex",
     description:
-      "Spearheaded the development and deployment of company websites and internal dashboards using Django, React.js, and WordPress. Actively contributed to the R&D of AI-based surveillance systems, exploring AI agents.",
+      "Spearheading the development and deployment of company websites and internal dashboards using Django, React.js, and WordPress. Actively contributed to the R&D of AI-based surveillance systems, exploring AI agents.",
     icon: Briefcase,
     year: "APRIL, 2025 - Present",
   },
   {
     id: 102,
-    title: "Junior WordPress Developer (Internship)",
-    institution: "DI TECH SOLUTIONS",
+    title: "Technical Team Member",
+    institution: "LoopLab.com",
     description:
-      "Assisted in developing and maintaining custom WordPress themes and plugins for client websites, ensuring mobile responsiveness and SEO-ready structures. Contributed to the successful launch of 2+ client projects.",
+      "Working on seasonal web development projects, specifically utilizing Django and Python to build and maintain web infrastructure.",
     icon: Code,
-    year: "FEB, 2025 - APRIL, 2025",
+    year: "NOV, 2025 - PRESENT",
   },
   {
     id: 103,
-    title: "Draftsman",
-    institution: "Benchmark",
+    title: "Campus Ambassador",
+    institution: "AIESEC in Pakistan",
     description:
-      "Created detailed 2D floor plans and 3D design layouts for residential and commercial projects using industry-standard tools (AutoCAD, Adobe Illustrator), ensuring accuracy and adherence to client specifications.",
-    icon: Factory,
-    year: "JUNE, 2023 - ОСТ, 2023",
+      "Driving student engagement and networking initiatives. Representing the organization to foster professional growth and community building among peers.",
+    icon: GraduationCap,
+    year:"AUG, 2025 - PRESENT"
+  },
+  {
+    id: 104,
+    title: "Frontend Developer (Internship)",
+    institution: "CodeAlpha",
+    description:
+      "Gained hands-on experience in frontend technologies, assisting in the development of responsive user interfaces and improving web accessibility.",
+    icon: Code,
+    year: "JUL, 2025 - AUG, 2025",
+  },
+  {
+    id: 105,
+    title: "Junior WordPress Developer (Internship)",
+    institution: "DI TECH SOLUTIONS",
+    description:
+      "Assisted in developing and maintaining custom WordPress themes and plugins for client websites, ensuring mobile responsiveness and SEO-ready structures. Contributed to the successful launch of 3+ client projects.",
+    icon: Code,
+    year: "FEB, 2025 - APRIL, 2025",
   },
 ];
 
@@ -62,10 +80,10 @@ const education: JourneyItem[] = [
   },
   {
     id: 202,
-    title: "Intermediate (Pre-Engineering)",
+    title: "Intermediate (ICS)",
     institution: "Govt. Shalimar College, Lahore",
     description:
-      "Completed Intermediate (Pre-Engineering) from Govt. Shalimar College, Lahore.",
+      "Completed Intermediate (ICS) from Govt. Shalimar College, Lahore.",
     icon: BookOpen,
     year: "2021 - 2023",
   },
