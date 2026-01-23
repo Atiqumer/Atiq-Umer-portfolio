@@ -4,7 +4,6 @@ import { useState, useEffect, useMemo, memo } from "react";
 import {
   Briefcase,
   Code,
-  Factory,
   GraduationCap,
   BookOpen,
 } from "lucide-react";
