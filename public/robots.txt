@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://atiqumer.live/sitemap.xml

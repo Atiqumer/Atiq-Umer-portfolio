@@ -1,0 +1,252 @@
+/*
+ * Tailwind v4 entry: config lives here, with no tailwind.config.js or PostCSS plugin.
+ * - Keep every @import in this top block, above @theme and the rest of the file. Install an
+ *   npm package before @importing its CSS. Never @import a remote URL (web fonts, CDN CSS): the
+ *   build resolves @import from the filesystem. Load those with a <link> in the head() of
+ *   src/routes/__root.tsx and name the family in a --font-* token in @theme inline below.
+ */
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition.
+ *
+ * The design lives in this file: oklch color tokens on the shadcn variables
+ * (--background, --foreground, --primary, --secondary, --muted, --accent, ...) plus
+ * new tokens as needed, font tokens, and custom styles and animations.
+ *
+ * The @theme inline block maps CSS custom properties to Tailwind utility
+ * classes (e.g. --color-primary -> bg-primary, text-primary).
+ *
+ * The :root and .dark blocks define the actual color values using oklch.
+ * All colors MUST use oklch format.
+ *
+ * To add a new semantic color:
+ * 1. Add the variable to :root (light value) and .dark (dark value)
+ * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-screen-dark: var(--screen-dark);
+  --color-bezel: var(--bezel);
+  --color-frame: var(--frame);
+  --color-call-green: var(--call-green);
+  --color-proj-blue: var(--proj-blue);
+  --color-proj-amber: var(--proj-amber);
+  --color-proj-pink: var(--proj-pink);
+  --color-proj-plum: var(--proj-plum);
+  --color-proj-yellow: var(--proj-yellow);
+  --color-proj-red: var(--proj-red);
+  --color-proj-teal: var(--proj-teal);
+  --color-art-ink: oklch(0.13 0 0);
+  --color-proj-sage: var(--proj-sage);
+  --font-display: "Sofia Sans Extra Condensed", "Arial Narrow", sans-serif;
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(0.973 0.003 84);
+  --foreground: oklch(0.2 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0 0);
+  --primary: oklch(0.2 0 0);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.94 0.002 84);
+  --secondary-foreground: oklch(0.2 0 0);
+  --muted: oklch(0.94 0.002 84);
+  --muted-foreground: oklch(0.5 0 0);
+  --accent: oklch(0.94 0.002 84);
+  --accent-foreground: oklch(0.2 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.9 0.002 84);
+  --input: oklch(0.9 0.002 84);
+  --ring: oklch(0.6 0 0);
+  --ink: oklch(0.2 0 0);
+  --paper: oklch(1 0 0);
+  --screen-dark: oklch(0.15 0 0);
+  --bezel: oklch(0.13 0 0);
+  --frame: oklch(0.86 0.006 84);
+  --frame-silver: oklch(0.86 0.006 84);
+  --frame-graphite: oklch(0.36 0.004 260);
+  --frame-rose: oklch(0.74 0.09 35);
+  --frame-sage: oklch(0.76 0.04 140);
+  --call-green: oklch(0.72 0.19 148);
+  --proj-blue: oklch(0.52 0.2 264);
+  --proj-amber: oklch(0.7 0.17 50);
+  --proj-pink: oklch(0.81 0.07 40);
+  --proj-plum: oklch(0.24 0.08 290);
+  --proj-yellow: oklch(0.84 0.16 88);
+  --proj-red: oklch(0.5 0.19 28);
+  --proj-teal: oklch(0.32 0.05 200);
+  --proj-sage: oklch(0.55 0.04 150);
+  --glow: oklch(0.85 0.09 55 / 60%);
+}
+
+[data-frame="silver"] { --frame: var(--frame-silver); }
+[data-frame="graphite"] { --frame: var(--frame-graphite); }
+[data-frame="rose"] { --frame: var(--frame-rose); }
+[data-frame="sage"] { --frame: var(--frame-sage); }
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html, body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.font-display { font-family: var(--font-display); font-weight: 900; line-height: 0.86; text-transform: uppercase; }
+
+[data-style="glow"] .stage-bg {
+  background: radial-gradient(55% 60% at 50% 50%, var(--glow), transparent 70%);
+}
+.orbit-ring {
+  position: absolute; left: 50%; top: 50%;
+  border: 1px dashed color-mix(in oklab, var(--ink) 20%, transparent);
+  border-radius: 9999px;
+  animation: orbit-spin 60s linear infinite;
+}
+@keyframes orbit-spin { from { transform: translate(-50%, -50%) rotate(0) } to { transform: translate(-50%, -50%) rotate(360deg); } }
+@keyframes ring-pulse { 0% { transform: scale(1); opacity: .45 } 100% { transform: scale(1.8); opacity: 0 } }
+.ring-pulse { animation: ring-pulse 2s ease-out infinite; }
+@keyframes hint-bob { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-4px) } }
+.hint-bob { animation: hint-bob 2.2s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .orbit-ring, .ring-pulse, .hint-bob { animation: none; }
+}
+
+/* Technology marquee: pure CSS transform loop over two identical copies. */
+@keyframes marquee-x { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-50%, 0, 0); } }
+.marquee-track { animation: marquee-x 45s linear infinite; will-change: transform; }
+.marquee-reverse { animation-direction: reverse; }
+.marquee:hover .marquee-track, .marquee:active .marquee-track { animation-play-state: paused; }
+.tech-item:hover svg { color: color-mix(in oklab, var(--brand) 75%, var(--paper)); }
+@media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } .marquee { overflow-x: auto; } }
+
+/* Typography scale: sized to the phone's inner screen (container units), clamped to readable px ranges.
+   Mobile values first; the 42rem container breakpoint matches Tailwind's @2xl (unfolded wide screen). */
+.t-hero { font-family: var(--font-display); font-weight: 900; text-transform: uppercase; font-size: clamp(2.625rem, 13cqw, 3.5rem); line-height: 0.95; }
+.t-h2 { font-family: var(--font-display); font-weight: 900; text-transform: uppercase; font-size: clamp(2rem, 11cqw, 2.6rem); line-height: 0.95; text-wrap: balance; }
+.t-h3 { font-family: var(--font-display); font-weight: 900; text-transform: uppercase; font-size: clamp(1.25rem, 7cqw, 1.6rem); line-height: 1; }
+.t-lead { font-size: clamp(1.0625rem, 5cqw, 1.1875rem); line-height: 1.45; }
+.t-body { font-size: clamp(0.94rem, 4.4cqw, 1rem); line-height: 1.6; text-wrap: pretty; }
+.t-meta { font-family: var(--font-mono); font-size: clamp(0.69rem, 3.2cqw, 0.81rem); text-transform: uppercase; letter-spacing: 0.04em; line-height: 1.4; }
+@container (min-width: 42rem) {
+  .t-hero { font-size: clamp(4.5rem, 8cqw, 6.5rem); }
+  .t-h2 { font-size: clamp(3rem, 5.4cqw, 4.25rem); }
+  .t-h3 { font-size: clamp(1.5rem, 2.5cqw, 2rem); }
+  .t-lead { font-size: clamp(1.25rem, 1.7cqw, 1.5rem); }
+  .t-body { font-size: clamp(1rem, 1.25cqw, 1.125rem); }
+  .t-meta { font-size: clamp(0.75rem, 0.9cqw, 0.875rem); }
+}
+
+/* Final cover screen: spacing follows its height, not the full unfolded device. */
+.call-screen { container-type: size; }
+.call-layout { height: 100%; overflow-y: auto; overscroll-behavior: contain; display: flex; flex-direction: column; padding: 5cqh 7cqw 5cqh; gap: 2.5cqh; }
+.call-label { font-size: clamp(11px, 2.3cqmin, 12px); letter-spacing: .14em; }
+.call-heading h2 { font-size: clamp(22px, 10cqmin, 56px); line-height: .92; margin-top: 1cqh; }
+.call-heading p { margin-top: 1.5cqh; font-size: clamp(11px, 3cqmin, 15px); line-height: 1.4; }
+.call-caller { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2.5cqh; min-height: 0; }
+.call-portrait { width: clamp(40px, 22cqh, 150px); height: clamp(40px, 22cqh, 150px); flex-shrink: 0; }
+.call-identity { font-size: clamp(11px, 3cqmin, 16px); line-height: 1.5; }
+.call-identity p + p { font-size: clamp(11px, 2.6cqmin, 13px); }
+.call-outline { animation: call-outline 5s ease-in-out infinite; }
+@keyframes call-outline { 0%, 100% { transform: scale(1.06); opacity: .5; } 50% { transform: scale(1.13); opacity: .2; } }
+.call-cta, .call-send { width: 100%; height: clamp(40px, 9cqh, 54px); font-size: clamp(11px, 2.9cqmin, 15px); letter-spacing: .1em; transition: background-color .25s, color .25s, transform .25s; }
+.call-cta:hover, .call-send:hover { transform: translateY(-1px); }
+.call-cta svg, .call-send svg { transition: transform .25s; }
+.call-cta:hover svg, .call-send:hover svg { transform: translate(2px, -2px); }
+.call-step { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 2cqh; }
+.call-back { display: inline-flex; align-items: center; gap: 4px; align-self: flex-start; font-size: clamp(9px, 2.3cqmin, 12px); letter-spacing: .12em; padding: 4px 0; }
+.call-back svg { width: 1.2em; height: 1.2em; }
+.call-step h3 { font-size: clamp(20px, 8cqmin, 44px); line-height: .95; }
+.call-options { display: flex; flex-direction: column; border-top: 1px solid color-mix(in oklab, var(--paper) 20%, transparent); }
+.call-option { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 2cqh 2px; min-height: 36px; text-align: left; font-size: clamp(12px, 3.3cqmin, 17px); border-bottom: 1px solid color-mix(in oklab, var(--paper) 20%, transparent); transition: padding .25s, color .25s; }
+.call-option:hover, .call-option:focus-visible { padding-left: 8px; }
+.call-option svg { width: 1em; height: 1em; opacity: .6; }
+.call-form { display: flex; flex-direction: column; gap: 1.5cqh; flex: 1; min-height: 0; }
+.call-field { width: 100%; background: transparent; border: 1px solid color-mix(in oklab, var(--paper) 25%, transparent); border-radius: 10px; padding: 1.4cqh 12px; font-size: clamp(12px, 3cqmin, 15px); color: var(--paper); }
+.call-field::placeholder { color: color-mix(in oklab, var(--paper) 45%, transparent); }
+.call-field:focus { outline: none; border-color: var(--paper); }
+textarea.call-field { flex: 1; min-height: 52px; resize: none; }
+.call-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.call-note { font-size: clamp(11px, 2.4cqmin, 12px); text-align: center; line-height: 1.4; }
+.call-error { font-size: clamp(11px, 2.6cqmin, 13px); color: var(--paper); margin-top: -0.5cqh; }
+.call-error::before { content: "! "; font-weight: 700; }
+.call-field[aria-invalid="true"] { border-color: var(--paper); border-width: 2px; }
+.call-direct { text-align: center; font-size: clamp(11px, 2.6cqmin, 13px); line-height: 1.6; margin-top: -0.5cqh; }
+.call-direct-link { display: inline-flex; align-items: center; gap: 6px; text-transform: none; padding: 6px 4px; font-size: clamp(11px, 2.8cqmin, 14px); }
+.call-form .call-label + .call-field { margin-top: -0.8cqh; }
+@container (max-height: 450px) {
+  .call-layout { gap: 1.5cqh; padding-block: 4cqh; }
+  .call-heading h2 { font-size: clamp(18px, 8cqmin, 26px); }
+  .call-heading p { margin-top: 1cqh; font-size: 11px; }
+  .call-caller { flex-direction: row; gap: 4cqw; }
+  .call-identity { text-align: left; font-size: 11px; }
+  .call-step { gap: 1.5cqh; }
+  .call-step h3 { font-size: 18px; }
+  .call-option { padding-block: 1.2cqh; min-height: 30px; font-size: 12px; }
+  .call-field { padding-block: 6px; font-size: 12px; }
+  .call-cta, .call-send { height: 36px; font-size: 11px; }
+  .call-note { font-size: 11px; }
+  .call-direct-link { padding-block: 4px; }
+}
+@container (max-height: 260px) {
+  .call-layout { gap: 4px; padding-block: 8px; }
+  .call-heading p { display: none; }
+  .call-portrait { width: 34px; height: 34px; }
+  .call-step h3 { font-size: 15px; }
+  .call-option { min-height: 24px; padding-block: 3px; font-size: 11px; }
+  .call-cta, .call-send { height: 30px; }
+  textarea.call-field { min-height: 28px; }
+  .call-field { padding-block: 4px; }
+}
+.call-screen[data-paused="true"] .call-outline { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .call-outline { animation: none; transform: scale(1.08); opacity: .35; } }
+
+/* Keyboard focus mirrored onto the unfocusable twin in the other phone half. */
+[data-screen-root] :focus-visible, [data-mirror-focus] { outline: 2px solid currentColor; outline-offset: 3px; }
+/* Focus rings for the cover and bottom nav: a two-tone ring stays visible on light and dark, inset where the phone's rounded screen would clip it. */
+[data-call-screen] :focus-visible, nav[aria-label="Main"] :focus-visible { outline: 2px solid var(--paper); outline-offset: 2px; box-shadow: 0 0 0 4px var(--ink); }
+.call-option:focus-visible, .call-back:focus-visible, .call-field:focus-visible { outline-offset: -2px; box-shadow: none; }
+/* The enquiry steps scroll inside the short cover instead of squashing fields together. */
+.call-step, .call-form { flex: 1 0 auto; }
+.call-form > *, .call-step > * { flex-shrink: 0; }
+@container (max-width: 300px) { .call-cta, .call-send { letter-spacing: .03em; font-size: 11px; gap: 4px; } }
+
+.call-direct-link svg { width: 1.1em; height: 1.1em; flex-shrink: 0; }

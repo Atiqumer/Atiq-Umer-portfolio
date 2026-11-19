@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Atiq Umer — Developer Portfolio
 
-## Getting Started
+An SSR portfolio for Atiq Umer, an AI/ML and full-stack developer. The homepage is a scroll-driven foldable phone: its lock screen opens into the portfolio, and the inner display contains the complete experience.
 
-First, run the development server:
+## Features
 
-```bash
+- Interactive folding-phone stage with keyboard and reduced-motion support.
+- Lock screen, services, featured work, experience, skills, stacked event-photo deck, and contact flow.
+- Four featured projects on the homepage and all ten projects at `/projects`.
+- Local image assets, AU favicons, canonical metadata, sitemap, and robots directives.
+- Client error boundary and server-side fallback page without a vendor telemetry runtime.
+
+## Stack
+
+- React 19, TypeScript, TanStack Start SSR, TanStack Router, and React Query.
+- Vite, Tailwind CSS v4, and Framer Motion.
+- Cloudflare Workers through `@cloudflare/vite-plugin` and Wrangler.
+- Vitest, Testing Library, ESLint, and Prettier.
+
+## Requirements
+
+- Node.js 20 or later.
+- npm 10 or later.
+- A Cloudflare account only when deploying.
+
+## Local development
+
+```sh
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open the local URL printed by Vite. `vite dev` uses the Cloudflare Vite integration, so server rendering runs in a Workers-compatible runtime.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Site URL configuration
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+`site.config.json` holds the production default, `https://atiqumer.live`. For a non-production canonical origin, create an uncommitted `.env.local` file:
 
-## Learn More
+```sh
+VITE_SITE_URL=https://preview.example.com
+```
 
-To learn more about Next.js, take a look at the following resources:
+The same value is used by route metadata and by `npm run seo`, which generates `public/robots.txt` and `public/sitemap.xml` before every production build. No environment variables are required for local development or the contact form.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Commands
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the local Workers-compatible development server. |
+| `npm run typecheck` | Run TypeScript without emitting files. |
+| `npm run lint` | Run ESLint. |
+| `npm test` | Run the Vitest suite. |
+| `npm run build` | Generate SEO files and create the production Workers build. |
+| `npm run preview` | Preview the production build locally. |
+| `npm run cf-typegen` | Generate Cloudflare binding types if bindings are added later. |
+| `npm run deploy` | Build and deploy with Wrangler. Do not run until deployment is approved. |
 
-## Deploy on Vercel
+## Cloudflare Workers deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This repository is configured for Cloudflare Workers, not a client-only static host. `wrangler.jsonc` uses TanStack Start's supported Worker entry point; the Cloudflare Vite plugin manages the SSR Worker and static client assets.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Push the reviewed code to the existing GitHub repository through a normal branch and pull request. Do not force-push or rewrite history.
+2. In Cloudflare, create a Worker from the repository or authenticate locally with `npx wrangler login`.
+3. Use Node 20+, `npm ci`, and `npm run build` as the install/build commands. The deployment command is `npm run deploy`.
+4. After the Worker exists, open **Workers & Pages → the Worker → Settings → Domains & Routes**, then add `atiqumer.live` as a **Custom Domain**. Cloudflare creates the DNS record and TLS certificate for a Cloudflare-managed zone.
+5. Confirm `https://atiqumer.live/` and `https://atiqumer.live/projects` render correctly before redirecting any previous host.
+
+Do not add a route or domain binding to `wrangler.jsonc` until the Cloudflare zone and Worker exist. No Cloudflare account resources, DNS records, or deployments are created by this repository.
+
+## Project structure
+
+```text
+src/
+  assets/            # Local portraits, event photography, and project artwork
+  components/site/   # Folding phone and portfolio sections
+  data/              # Portfolio content, projects, and image references
+  lib/               # Error reporting, SEO origin, and utilities
+  routes/            # TanStack file routes
+public/               # Favicon and generated robots/sitemap files
+scripts/              # Build-time SEO file generation
+```
+
+`src/routeTree.gen.ts` is generated by TanStack Router and must not be edited manually.
+
+## Contact behavior
+
+The enquiry form validates its fields in the browser and opens a prepared `mailto:` link for `atiqumer15@gmail.com`. It has no backend, database, or secret configuration. Calendly links remain external.
+
+## Licenses and asset ownership
+
+The project currently has no declared license for its own source. Add one before publishing the repository publicly. The portfolio photographs, screenshots, and artwork should only be published where Atiq Umer has the necessary rights. Third-party icon and font packages retain their own licenses and trademark terms.
