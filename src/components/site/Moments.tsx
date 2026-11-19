@@ -83,7 +83,7 @@ export function Moments() {
                   whileDrag={{ cursor: "grabbing" }}
                 >
                   <img src={m.src} alt={front ? m.alt : ""} width={m.w} height={m.h} draggable={false}
-                    loading={i === 0 ? "eager" : "lazy"} fetchPriority={i === 0 ? "high" : "auto"} decoding="async"
+                    loading="lazy" decoding="async"
                     className="h-full w-full select-none object-cover" />
                 </motion.div>
               );

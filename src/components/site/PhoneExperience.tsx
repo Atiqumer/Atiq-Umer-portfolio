@@ -1,6 +1,6 @@
 import { motion, useMotionValue, useMotionValueEvent, useScroll, useTransform, type MotionValue } from "framer-motion";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { BEZEL, RIM, useDeviceSize } from "@/hooks/useDeviceSize";
+import { BEZEL, RIM, useDeviceSize, type ViewportSeed } from "@/hooks/useDeviceSize";
 import type { NavId } from "@/data/services";
 import { ScreenContent } from "./ScreenContent";
 import { offsetWithinScreen } from "./screen-context";
@@ -14,8 +14,8 @@ const T = { unfoldEnd: 0.07, scrollStart: 0.1, scrollEnd: 0.86, foldStart: 0.88,
 const clamp01 = (v: number) => Math.min(1, Math.max(0, v));
 const SHADOW = "0 40px 60px -30px oklch(0 0 0 / 35%)";
 
-export function PhoneExperience() {
-  const size = useDeviceSize();
+export function PhoneExperience({ initialViewport }: { initialViewport: ViewportSeed }) {
+  const size = useDeviceSize(initialViewport);
   const { W, H, axis, vh, top } = size;
   const side = axis === "side";
   const sectionRef = useRef<HTMLDivElement>(null);

@@ -9,6 +9,7 @@ export const RIM = 3;
  * stack: phone flip fold (halves stacked, W is full width, H full height).
  */
 export type DeviceSize = { W: number; H: number; axis: "side" | "stack"; vw: number; vh: number; top: number };
+export type ViewportSeed = { vw: number; vh: number };
 
 export function computeDeviceSize(vw: number, vh: number): DeviceSize {
   if (vw < 820) {
@@ -27,8 +28,12 @@ export function computeDeviceSize(vw: number, vh: number): DeviceSize {
   return { W, H, axis: "side", vw, vh, top: Math.max(vh < 520 ? 58 : 70, Math.round((vh - H) / 2 - 10)) };
 }
 
-export function useDeviceSize() {
-  const [size, setSize] = useState<DeviceSize>(() => computeDeviceSize(1440, 900));
+/**
+ * Keep the SSR/client seed in sync. The route provides client hints when the
+ * browser sends them, then this hook takes over for resizes after hydration.
+ */
+export function useDeviceSize(initialViewport: ViewportSeed) {
+  const [size, setSize] = useState<DeviceSize>(() => computeDeviceSize(initialViewport.vw, initialViewport.vh));
   useEffect(() => {
     const update = () => setSize(computeDeviceSize(window.innerWidth, window.innerHeight));
     update();

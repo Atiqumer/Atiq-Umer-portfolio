@@ -1,4 +1,6 @@
 import heroPhoto from "@/assets/atiq-hero-profile.jpg";
+import heroPhoto480 from "@/assets/atiq-hero-profile-480.webp";
+import heroPhoto960 from "@/assets/atiq-hero-profile-960.webp";
 import aboutPhoto from "@/assets/atiq-about-portrait.jpg";
 
 export const EMAIL = "atiqumer15@gmail.com";
@@ -9,6 +11,8 @@ export const CALENDLY_URL: string | null = "https://calendly.com/atiqumer/30-min
 export const LOCATION = "Based in Pakistan";
 
 export const PORTRAIT_URL: string | null = heroPhoto;
+export const PORTRAIT_SRC_SET = `${heroPhoto480} 480w, ${heroPhoto960} 960w, ${heroPhoto} 1920w`;
+export const PORTRAIT_SIZES = "(max-width: 819px) calc(100vw - 52px), min(40vw, 555px)";
 export const ABOUT_PORTRAIT_URL: string = aboutPhoto;
 
 export const services = [

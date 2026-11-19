@@ -1,9 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MotionConfig } from "framer-motion";
 import { PhoneExperience } from "@/components/site/PhoneExperience";
+import { getInitialViewport } from "@/lib/initial-viewport";
 import { absoluteUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
+  loader: () => {
+    return getInitialViewport();
+  },
   head: () => ({
     meta: [
       { title: "Atiq Umer | AI/ML & Full-Stack Developer" },
@@ -22,11 +26,12 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const initialViewport = Route.useLoaderData();
   return (
     <MotionConfig reducedMotion="user">
       <main>
         <h1 className="sr-only">Atiq Umer — AI/ML Engineer &amp; Full-Stack Developer</h1>
-        <PhoneExperience />
+        <PhoneExperience initialViewport={initialViewport} />
       </main>
     </MotionConfig>
   );

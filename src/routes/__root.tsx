@@ -11,6 +11,9 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import geistFont from "../assets/fonts/geist-latin.woff2?url";
+import geistMonoFont from "../assets/fonts/geist-mono-latin.woff2?url";
+import sofiaFont from "../assets/fonts/sofia-sans-extra-condensed-latin.woff2?url";
 import { reportClientError } from "../lib/error-reporting";
 
 function NotFoundComponent() {
@@ -93,9 +96,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Sofia+Sans+Extra+Condensed:wght@800;900&display=swap" },
+      { rel: "preload", href: geistFont, as: "font", type: "font/woff2", crossOrigin: "anonymous" },
+      { rel: "preload", href: geistMonoFont, as: "font", type: "font/woff2", crossOrigin: "anonymous" },
+      { rel: "preload", href: sofiaFont, as: "font", type: "font/woff2", crossOrigin: "anonymous" },
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
       { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32.png" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },

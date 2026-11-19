@@ -25,7 +25,9 @@ export function SiteChrome({ style, setStyle, frame, setFrame, onHome }: { style
       </div>
       <div className="absolute bottom-5 left-5 z-50 flex gap-1.5 rounded-full bg-paper p-1.5 shadow-[0_6px_20px_-8px_oklch(0_0_0/0.25)] md:bottom-4 md:left-1/2 md:-translate-x-1/2">
         {frames.map((f) => (
-          <button key={f.id} aria-label={`${f.id} frame`} onClick={() => setFrame(f.id)} className={`h-4 w-4 rounded-full transition-transform hover:scale-110 ${f.swatch} ${frame === f.id ? "ring-2 ring-ink ring-offset-2 ring-offset-paper" : ""}`} />
+          <button key={f.id} aria-label={`${f.id} frame`} onClick={() => setFrame(f.id)} className={`grid size-6 place-items-center rounded-full transition-transform hover:scale-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink ${frame === f.id ? "ring-2 ring-ink ring-offset-2 ring-offset-paper" : ""}`}>
+            <span aria-hidden className={`size-4 rounded-full ${f.swatch}`} />
+          </button>
         ))}
       </div>
     </>

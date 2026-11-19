@@ -2,7 +2,7 @@ import { GithubIcon, LinkedinIcon } from "./BrandIcons";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { CalendarDays } from "lucide-react";
-import { CALENDLY_URL, GITHUB, LINKEDIN, PORTRAIT_URL } from "@/data/services";
+import { CALENDLY_URL, GITHUB, LINKEDIN, PORTRAIT_SIZES, PORTRAIT_SRC_SET, PORTRAIT_URL } from "@/data/services";
 
 /** Cover screen shown while the phone is folded. */
 function useClock() {
@@ -18,7 +18,7 @@ export function LockScreen({ onUnfold, compact }: { onUnfold: () => void; compac
   return (
     <div className="[container-type:size] relative h-full w-full overflow-hidden bg-screen-dark text-paper">
       {PORTRAIT_URL && (
-        <motion.img src={PORTRAIT_URL} alt="" aria-hidden initial={{ scale: 1.12 }} animate={{ scale: 1.04 }} transition={{ duration: 2.4, ease: [0.22, 1, 0.36, 1] }}
+        <motion.img src={PORTRAIT_URL} srcSet={PORTRAIT_SRC_SET} sizes={PORTRAIT_SIZES} width={1920} height={1440} fetchPriority="high" alt="" aria-hidden initial={{ scale: 1.12 }} animate={{ scale: 1.04 }} transition={{ duration: 2.4, ease: [0.22, 1, 0.36, 1] }}
           className="absolute inset-0 h-full w-full object-cover object-[28%_center]" />
       )}
       <div aria-hidden className="absolute inset-0" style={{ background: "linear-gradient(180deg, color-mix(in oklab, var(--screen-dark) 60%, transparent) 0%, transparent 38%, transparent 55%, color-mix(in oklab, var(--screen-dark) 75%, transparent) 100%)" }} />

@@ -1,4 +1,4 @@
-import { PORTRAIT_URL } from "@/data/services";
+import { PORTRAIT_SIZES, PORTRAIT_SRC_SET, PORTRAIT_URL } from "@/data/services";
 
 /** Seeded pseudo-random contribution grid (decorative, deterministic for SSR). */
 export function ContributionGrid({ cols = 22, rows = 7, className = "" }: { cols?: number; rows?: number; className?: string }) {
@@ -17,7 +17,7 @@ export function ContributionGrid({ cols = 22, rows = 7, className = "" }: { cols
 /** Hero portrait: Atiq's real photo when provided, otherwise a typographic panel (never a stand-in face). */
 export function Portrait({ position = "object-[30%_center]" }: { position?: string }) {
   if (PORTRAIT_URL) {
-    return <img src={PORTRAIT_URL} alt="Portrait of Atiq Umer" className={`absolute inset-0 h-full w-full object-cover ${position}`} />;
+    return <img src={PORTRAIT_URL} srcSet={PORTRAIT_SRC_SET} sizes={PORTRAIT_SIZES} width={1920} height={1440} loading="lazy" decoding="async" alt="Portrait of Atiq Umer" className={`absolute inset-0 h-full w-full object-cover ${position}`} />;
   }
   return (
     <div className="absolute inset-0 flex flex-col justify-between bg-screen-dark p-[3cqw] text-paper">

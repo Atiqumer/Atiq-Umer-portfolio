@@ -9,6 +9,54 @@
 @source "../src";
 @import "tw-animate-css";
 
+/* Self-hosted Latin subsets. The fallback faces use matching line-box metrics
+   while the local files load, so the initial lock screen does not reflow. */
+@font-face {
+  font-family: "Geist";
+  src: url("./assets/fonts/geist-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist Mono";
+  src: url("./assets/fonts/geist-mono-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Sofia Sans Extra Condensed";
+  src: url("./assets/fonts/sofia-sans-extra-condensed-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist Fallback";
+  src: local("Arial");
+  size-adjust: 100%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Geist Mono Fallback";
+  src: local("Consolas");
+  size-adjust: 97%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Sofia Sans Extra Condensed Fallback";
+  src: local("Arial Narrow");
+  size-adjust: 100%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 /*
@@ -68,9 +116,9 @@
   --color-proj-teal: var(--proj-teal);
   --color-art-ink: oklch(0.13 0 0);
   --color-proj-sage: var(--proj-sage);
-  --font-display: "Sofia Sans Extra Condensed", "Arial Narrow", sans-serif;
-  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Geist Mono", ui-monospace, monospace;
+  --font-display: "Sofia Sans Extra Condensed", "Sofia Sans Extra Condensed Fallback", "Arial Narrow", sans-serif;
+  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
 }
 
 :root {
