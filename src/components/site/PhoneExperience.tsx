@@ -13,6 +13,31 @@ import { SiteChrome, type StageStyle, type FrameColor } from "./SiteChrome";
 const T = { unfoldEnd: 0.07, scrollStart: 0.1, scrollEnd: 0.86, foldStart: 0.88, foldEnd: 0.95, contact: 0.985 };
 const clamp01 = (v: number) => Math.min(1, Math.max(0, v));
 const SHADOW = "0 40px 60px -30px oklch(0 0 0 / 35%)";
+const HERO_NAME_EASE = [0.22, 1, 0.36, 1] as const;
+
+export function getHeroNameEntrance(direction: "left" | "right") {
+  return {
+    initial: { opacity: 0, x: direction === "left" ? "-110vw" : "110vw" },
+    animate: { opacity: 1, x: 0 },
+    transition: { duration: 1.05, ease: HERO_NAME_EASE },
+  };
+}
+
+/**
+ * On side-by-side screens, the static half extends one CSS pixel under the
+ * hinged half. This avoids a fractional-device-pixel gap between their two
+ * independently clipped composited surfaces; the matching offset keeps both
+ * ScreenContent copies in the same global coordinate space.
+ */
+export function getStaticHalfGeometry(side: boolean, W: number, H: number) {
+  return side
+    ? { width: W + 1, height: H, contentOffset: { left: -(W - RIM - BEZEL) + 1, top: 0 } }
+    : { width: W, height: H / 2, contentOffset: { left: 0, top: -(H / 2 - RIM - BEZEL) } };
+}
+
+function HeroName({ direction, children }: { direction: "left" | "right"; children: string }) {
+  return <motion.span className="inline-block" {...getHeroNameEntrance(direction)}>{children}</motion.span>;
+}
 
 export function PhoneExperience({ initialViewport }: { initialViewport: ViewportSeed }) {
   const size = useDeviceSize(initialViewport);
@@ -52,7 +77,8 @@ export function PhoneExperience({ initialViewport }: { initialViewport: Viewport
   const halfH = side ? H : H / 2;
   const contentW = side ? boxW - 2 * (BEZEL + RIM) : W - 2 * (BEZEL + RIM);
   const screenH = H - 2 * (BEZEL + RIM);
-  const bOffset = side ? { left: -(W - RIM - BEZEL), top: 0 } : { left: 0, top: -(halfH - RIM - BEZEL) };
+  const bGeometry = getStaticHalfGeometry(side, W, H);
+  const bOffset = bGeometry.contentOffset;
   const foldShift = side ? -W / 2 : vh / 2 - (top + (3 * H) / 4);
 
   const sR = side ? 38 : 40; // screen corner radius
@@ -171,13 +197,13 @@ export function PhoneExperience({ initialViewport }: { initialViewport: Viewport
         {/* Oversized split name behind the device */}
         {side ? (
           <motion.div aria-hidden style={{ opacity: wordsOpacity }} className="pointer-events-none absolute inset-0 select-none text-ink">
-            <span className="font-display absolute -translate-x-full -translate-y-1/2 text-[min(17vw,30vh)]" style={{ left: `calc(50vw - ${W / 2 - 30}px)`, top: "44vh" }}>Atiq</span>
-            <span className="font-display absolute -translate-y-1/2 text-[min(15vw,24vh)]" style={{ left: `calc(50vw + ${W / 2 - 10}px)`, top: "47vh" }}>Umer</span>
+            <span className="font-display absolute -translate-x-full -translate-y-1/2 text-[min(17vw,30vh)]" style={{ left: `calc(50vw - ${W / 2 - 30}px)`, top: "44vh" }}><HeroName direction="left">Atiq</HeroName></span>
+            <span className="font-display absolute -translate-y-1/2 text-[min(15vw,24vh)]" style={{ left: `calc(50vw + ${W / 2 - 10}px)`, top: "47vh" }}><HeroName direction="right">Umer</HeroName></span>
           </motion.div>
         ) : (
           <div aria-hidden className="pointer-events-none absolute inset-0 select-none text-ink">
-            <span className="font-display absolute left-1/2 -translate-x-1/2 text-[min(32vw,15vh)]" style={{ bottom: `calc(50vh + ${H / 4 + 22}px)` }}>Atiq</span>
-            <span className="font-display absolute left-1/2 -translate-x-1/2 text-[min(27vw,15vh)]" style={{ top: `calc(50vh + ${H / 4 + 26}px)` }}>Umer</span>
+            <span className="font-display absolute left-1/2 -translate-x-1/2 text-[min(32vw,15vh)]" style={{ bottom: `calc(50vh + ${H / 4 + 22}px)` }}><HeroName direction="left">Atiq</HeroName></span>
+            <span className="font-display absolute left-1/2 -translate-x-1/2 text-[min(27vw,15vh)]" style={{ top: `calc(50vh + ${H / 4 + 26}px)` }}><HeroName direction="right">Umer</HeroName></span>
           </div>
         )}
 
@@ -187,7 +213,7 @@ export function PhoneExperience({ initialViewport }: { initialViewport: Viewport
         <div className="absolute left-1/2 -translate-x-1/2" style={{ top }}>
           <motion.div className="relative" style={{ width: boxW, height: H, x: side ? shift : 0, y: side ? 0 : shift, perspective: 2400 }}>
             {/* Static half B (right / bottom) */}
-            <motion.div className="absolute bottom-0 right-0 border-[3px] border-frame bg-bezel" style={{ ...half, ...bBorder, borderRadius: bRadiusMv, boxShadow: SHADOW }}>
+            <motion.div className="absolute bottom-0 right-0 border-[3px] border-frame bg-bezel" style={{ width: bGeometry.width, height: bGeometry.height, ...bBorder, borderRadius: bRadiusMv, boxShadow: SHADOW }}>
               <motion.div inert={!open} className="absolute overflow-hidden" style={{ inset: bInset, borderRadius: bScreenRMv }}>
                 <motion.div className="absolute" style={{ ...bOffset, y }}>
                   <ScreenContent ref={contentRef} y={y} width={contentW} screenH={screenH} onNav={onNav} />
